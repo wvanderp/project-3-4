@@ -1,17 +1,5 @@
+#de skere bank
+project-3-4
 
-wat een facking shitty programma
-ook uw moeder
-# project-3-4
-<<<<<<< HEAD
-hoi
-=======
-kishtan
+welkom op de github van de skere bank wat een project is voor ti op de hro
 
-<<<<<<< HEAD
-swag changes
->>>>>>> origin/master
-=======
-
-swag changes
-
->>>>>>> 0eace7561aa69186c6c2b9979c90da9a0ed1b966
