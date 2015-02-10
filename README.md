@@ -1,3 +1,5 @@
+
+wat een facking shitty programma
 ook uw moeder
 # project-3-4
 <<<<<<< HEAD
@@ -5,6 +7,7 @@ hoi
 =======
 kishtan
 
+<<<<<<< HEAD
 swag changes
 >>>>>>> origin/master
 =======
