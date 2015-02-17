@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+../../nwjs-v0.12.0-alpha3-linux-ia32/nw .
+
