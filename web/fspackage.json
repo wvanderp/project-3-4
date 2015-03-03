@@ -4,7 +4,9 @@
 	"version": "0.1.0",
 
 	"window": {
- 		"title": "skere bank atm"
+ 		"title": "skere bank atm",
+		"fullscreen": true,
+		"toolbar": false
 	},
 
 	"dependencies": {
