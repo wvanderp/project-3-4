@@ -1,7 +1,7 @@
 {	
 	"name": "project-3-4",
 	"main": "index.html",
-	"version": "0.1",
+	"version": "0.1.0",
 
 	"window": {
  		"title": "skere bank atm",
