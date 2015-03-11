@@ -1,0 +1,15 @@
+<?php
+//deze pagina zet een bankrekening om in een saldo
+$link=mysqli_connect("localhost","root","skere","SkereDB");
+
+$br=$_GET["br"];
+
+$result=mysqli_query($link,"SELECT saldo FROM Rekening ".$br."LIMIT 1 ") or die(mysqli_error($link));
+$temp=mysqli_fetch_assoc($result);
+
+var_dump($result);
+var_dump($temp);
+
+echo $saldo;
+
+?>
