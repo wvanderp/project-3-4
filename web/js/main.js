@@ -2,5 +2,6 @@
 var cardNum
 
 $(document).ready(function (argument) {
-	loadView("mainMenu");
+	// loadView("mainMenu");
+	loadView("pininvullen");
 });

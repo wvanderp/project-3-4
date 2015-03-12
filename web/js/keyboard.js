@@ -50,6 +50,9 @@ window.onkeydown = function (e) {
 		case 83: // key: *(STAR) or S
 				console.log(code);
 			break;
+		case 76: // key: L (for loading card) 
+				loadCard(1);
+			break;
 	    default:
 	        
 	}

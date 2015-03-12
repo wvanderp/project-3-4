@@ -1,0 +1,12 @@
+*{
+	text-align: center;
+}
+
+.pinfield{
+	background-color: gray;
+	width: 20%;
+	height: 200px;
+	margin: 2px;
+	float: left;
+	line-height: 200px;
+}
