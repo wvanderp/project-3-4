@@ -1,7 +1,0 @@
-<div class="container">
-	<div class="row">
-		<div class="col-ms-12">
-			<h1>u heeft uw code 3 keer verkeerd ingevoert</h1>
-		</div>
-	</div>
-</div>

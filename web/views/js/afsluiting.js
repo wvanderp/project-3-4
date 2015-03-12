@@ -1,9 +1,0 @@
-<div class="container">
-	<div class="row">
-		<div class="col-ms-12">
-			<h1>bedankt</h1><br/>
-			<h1>en</h1><br/>
-			<h1>tot ziens</h1><br/>
-		</div>
-	</div>
-</div>
