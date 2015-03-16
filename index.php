@@ -13,7 +13,7 @@
 			<h1>welkom bij de skere bank</h1>
 			<img src="https://raw.githubusercontent.com/wvanderp/project-3-4/master/logo.png"></img><br/>
 			bent u opzoek naar onze pin api: <a href="api/">/api/</a></br>
-			bent u opzoek naar aanvalen op ons netwerk: <a href="attacks.php">list</a></br>
+			bent u opzoek naar aanvallen op ons netwerk: <a href="attacks.php">list</a></br>
 			bent u opzoek naar iets anders: <a href="http://google.com">google.com</a></br>
 		</div>
 	</body>
