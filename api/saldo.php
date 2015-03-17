@@ -4,7 +4,7 @@ $link=mysqli_connect("localhost","root","skere","SkereDB");
 
 $br=$_GET["br"];
 
-if (preg_match("/x^\d+$/mg", $br)){
+if (preg_match("%\d+$%mg", $br)){
 	die("rekeningnummer kan alleen cijfers bevatten");
 }
 
