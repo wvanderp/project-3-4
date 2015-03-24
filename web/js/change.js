@@ -6,3 +6,7 @@ function loadCard (_pasNr) {
 function loadGeldVraag () {
 	loadView("geldVragen");
 }
+
+function loadGeldVraagMsg (msg) {
+	$("#geldMsg").text("je hebt niet genoeg geld");
+}

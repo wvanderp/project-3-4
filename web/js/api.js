@@ -14,3 +14,7 @@ function validatePin(pin, pasNr){
 	console.log(atemps);
 	return "validate";
 }
+
+function validateAmount () {
+	// body...
+}
