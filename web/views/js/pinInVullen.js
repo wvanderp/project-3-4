@@ -1,11 +1,10 @@
 var i = 0;
 var pin = 0;
 var pinFactor = 1000;
-var atemps = 0;
+
 function allHand(num){
 	//you can only enter in 4 digits
 	//and the last has to submit the form so the loop is 3 +1
-	console.log(atemps);
 	if(i < 3){
 		//make the next field a star for user feedback
 		$(".pinField:eq("+i+")").text("*");
@@ -31,16 +30,12 @@ function allHand(num){
 
 
 function checkPin(){
-	$.post("/api/pinvalidate.php",{"cardNum": cardNum,"pin": pin}, function(data){
-		if (data == true) {
-			loadGeldVragen(); 
-		}else{
-			if (atemps == 3) {
-				console.log("ban");
-				loadPinFout();
-			}
-		}
-	});
+	//check the pin that is entered
+	//the function is in /js/api.js
+	validateCode = validatePin(pin, pasNr);
+	if (validateCode != null) {
+		loadGeldVraag();
+	};
 }
 
   //-----------------------------------------\\
