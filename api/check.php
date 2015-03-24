@@ -1,6 +1,9 @@
-function checkBankrekening(){
-	if (!preg_match("%\d+$%mg", $br)){
-	        die("rekeningnummer kan alleen cijfers bevatten");
+<?php
+	function checkBankrekening($br){
+		if (preg_match("%\d+$%mg", $br)){
+			return true;
+		}else{
+			return false;
+		}
 	}
-
-}
+?>
