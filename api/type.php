@@ -1,6 +1,7 @@
 
 <?php
 //deze pagina zet een bankrekening om in een type
+
 $link=mysqli_connect("localhost","root","skere","SkereDB");
 
 $br=$_GET["br"];
