@@ -1,16 +1,30 @@
 <?php
-include("check.php");
-//deze pagina zet een bankrekening om in een saldo
-$link=mysqli_connect("localhost","root","skere","SkereDB");
+	include("utils.php");
+	//deze pagina zet pincode + rekening nummer om in een validatie token.
 
-$br=$_GET["br"];
+	//zeker weten dat rekening_nr is ingevult
+	if(!isset($_GET["rekening_nr"])){
+		die("no rekening_nr found");
+	}
 
-$result=mysqli_query($link,"SELECT `Rekening_saldo` FROM `Rekening` WHERE `Rekening_nr` = ".$br." LIMIT 1 ") or die(mysqli_error($link));
-$temp=mysqli_fetch_assoc($result);
-$saldo = $temp["Rekening_saldo"];
-//var_dump($result);
-//var_dump($temp);
+	if (!checkBankrekening($_GET["rekening_nr"])) {
+		die("rekening nummer is niet geldig");
+	}
 
-echo $saldo;
+	$link=mysqli_connect("localhost","root","skere","SkereDB");
 
+	$rekening_nr = $_GET["rekening_nr"];
+
+	$rekening_nr = mysqli_real_escape_string($link, $rekening_nr);
+
+	$result = mysqli_query($link, "SELECT 'saldo' FROM 'rekening' WHERE `rekening_nr` = ".$rekening_nr." LIMIT 1 ") or die(mysqli_error($link));
+
+	if (mysqli_num_rows($result) == 0) {
+		die("rekening_nr niet bekent");
+	}else{
+		$temp = mysqli_fetch_array($result);
+
+		echo $temp[0];
+	}
 ?>
+
