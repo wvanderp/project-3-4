@@ -7,7 +7,7 @@ $rekening_nr = $_GET["br"];
 
 $rekening_nr = mysqli_real_escape_string($link, $rekening_nr);
 
-$query = "SELECT 'saldo' FROM 'rekening' WHERE 'rekening_nr' = ".$rekening_nr." LIMIT 1 ";
+$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = ".$rekening_nr." LIMIT 1 ";
 echo $query;
 $result=mysqli_query($link, $query) or die(mysqli_error($link));
 
