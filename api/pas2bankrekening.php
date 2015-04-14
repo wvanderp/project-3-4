@@ -1,6 +1,6 @@
 <?php
+	//deze end point zet een pas nummer om in een rekening nummer.
 	include("utils.php");
-	//deze pagina zet pincode + rekening nummer om in een validatie token.
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["pasNr"])){

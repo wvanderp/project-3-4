@@ -1,4 +1,5 @@
 <?php
+// geen idee waar dit over gaat.
 include("utils.php");
 
 $link = mysqli_connect("localhost","root","skere","SkereDB");

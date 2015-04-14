@@ -1,6 +1,6 @@
 <?php
-	include("utils.php");
 	//deze pagina zet pincode + rekening nummer om in een validatie token.
+	include("utils.php");
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){

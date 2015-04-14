@@ -1,6 +1,8 @@
 <?php
+	// deze end point haal geld van een rekening af.
+	// het heeft daarvoor een rekenin nummer en een hoeveelheid nodig
+	
 	include("utils.php");
-	//deze pagina zet pincode + rekening nummer om in een validatie token.
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
