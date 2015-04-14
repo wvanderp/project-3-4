@@ -1,6 +1,7 @@
 <?php
 	//  dit endpoint zet een rekening nummer om is een saldo.
 	include("utils.php");
+	require_once 'errorGen.php';
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){

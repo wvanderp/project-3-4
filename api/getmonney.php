@@ -3,22 +3,23 @@
 	// het heeft daarvoor een rekenin nummer en een hoeveelheid nodig
 	
 	include("utils.php");
+	require_once 'errorGen.php';
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
-		die("no rekening_nr found");
+		notFound("rekening nummer");
 	}
 
 	//check for a amount
 	if(!isset($_GET["amount"])){
-		die("no amount found");
+		notFound("hoeveelheid");
 	}
 
 	if (!is_numeric($_GET["amount"])) {
-		die("amount is not a number");
+		wrongType("ammount", "decimal number");
 	}
 
-	$link=mysqli_connect("localhost","root","skere","SkereDB");
+	$link=mysqli_connect("localhost","root","skere","SkereDB") or die();
 
 	$rekening_nr = $_GET["br"];
 	$amount = $_GET["amount"];

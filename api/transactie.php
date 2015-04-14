@@ -1,6 +1,7 @@
 <?php
 // geen idee waar dit over gaat.
 include("utils.php");
+require_once 'errorGen.php';
 
 $link = mysqli_connect("localhost","root","skere","SkereDB");
 
