@@ -5,10 +5,7 @@
 	// 0 -> no errors
 	// 1 -> var not found error
 	function notFound($var){
-		echo "{";
-		echo 'error: "'+$var+' not found in url",';
-		echo "errornum: 1";
-		echo "}";
+		vardump(array("errors" => $var+" not found in the url", "errornum" => 1));
 		die();
-	}	
+	}
 ?>
