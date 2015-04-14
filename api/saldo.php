@@ -1,6 +1,6 @@
 <?php
+	//  dit endpoint zet een rekening nummer om is een saldo.
 	include("utils.php");
-	//deze pagina zet pincode + rekening nummer om in een validatie token.
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){

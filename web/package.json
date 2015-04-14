@@ -8,7 +8,8 @@
 	},
 
 	"dependencies": {
-		"node-serial": ">=0.1.1"
+		"node-serial": ">=0.1.1",
+		"printer": ">=0.1.1"
 	},
 
 	"webkit": {

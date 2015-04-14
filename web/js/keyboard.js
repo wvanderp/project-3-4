@@ -67,6 +67,15 @@ window.onkeydown = function (e) {
 				console.log("key: *");
 				starHand();
 			break;
+		case 74: // key: j
+				//it isnt Hasj
+				console.log("key: #");
+				hashKeyHand();
+			break;
+		case 78: // key: n
+				console.log("key: *");
+				starHand();
+			break;
 		case 76: // key: L (for loading card) 
 				console.log("key: load");
 				loadCard(1);
