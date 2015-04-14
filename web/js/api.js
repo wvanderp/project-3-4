@@ -1,20 +1,11 @@
-var atemps = 0;
+var apiUrl = "http://hro.cwms.cc/api/";
+var api = {
+	bankRekening: {
+		getTypeUrl:apiUrl+"type.php",
+		getType: function (br) {
+			// body...
+		}
+	},
+	validatieToken: "",
 
-function validatePin(pin, pasNr){
-	// $.post("/api/pinvalidate.php",{"cardNum": cardNum,"pin": pin}, function(data){
-	// 	if (data == true) {
-	// 		loadGeldVragen(); 
-	// 	}else{
-	// 		if (atemps == 3) {
-	// 			console.log("ban");
-	// 			loadPinFout();
-	// 		}
-	// 	}
-	// });
-	console.log(atemps);
-	return "validate";
-}
-
-function validateAmount () {
-	// body...
 }

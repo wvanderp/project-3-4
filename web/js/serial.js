@@ -16,14 +16,14 @@ serialPort.on("open", function () {
 	console.log('open serial port');
 	serialPort.on('data', function(data) {
 		result = data.trim();
-		if (sizeof(result) < 2) {
-			keypad(result);
-		}else{
+		if (result.substring(1,4) == "card") {
 			loadCard(result);
+		}else{
+			keypad(result);
 		}
 	});
 
 	serialPort.on('error', function (err) {
-		errorHand();
+		console.log("Serial Error: "+err);
 	});
 });
