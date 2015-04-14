@@ -24,7 +24,7 @@
 	$br = mysqli_real_escape_string($link, $rekening_nr);
 	$amount = mysqli_real_escape_string($link, $amount);
 
-	$result = mysqli_query($link, "SELECT saldo FROM 'rekening' WHERE `rekening_nr` = ".$br." LIMIT 1 ") or die(mysqli_error($link));
+	$result = mysqli_query($link, "SELECT saldo FROM `rekening` WHERE `rekening_nr` = ".$br." LIMIT 1 ") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
 		die("rekening nummer is niet bekent");
