@@ -3,7 +3,9 @@ var api = {
 	bankRekening: {
 		getTypeUrl:apiUrl+"type.php",
 		getType: function (br) {
-			// body...
+			$.post(api.bankRekening.getTypeUrl+"?br="+br, {}, function (data) {
+				if (true) {};
+			});
 		}
 	},
 	validatieToken: "",

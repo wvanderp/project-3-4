@@ -1,5 +1,4 @@
 //static vars
-var apiUrl = "http://hro.cwms.cc/api";
 //vars for pinInVullen
 var atempts = 0;
 //var for load pass
