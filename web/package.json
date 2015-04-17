@@ -8,7 +8,7 @@
 	},
 
 	"dependencies": {
-		"node-serial": ">=0.1.1",
+		"serialport": ">=1.6.1",
 		"printer": ">=0.1.1"
 	},
 
