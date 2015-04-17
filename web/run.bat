@@ -1,2 +1,2 @@
-start ../../nwjs-v0.12.0-alpha3-win-x64/nw .
+start C:\xampp\htdocs\nwjs-v0.12.1-win-x64\nw .
 exit

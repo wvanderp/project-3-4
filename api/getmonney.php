@@ -38,7 +38,7 @@
 			die("niet genoeg saldo");
 		}
 		$saldo = $saldo - $amount;
-		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr`='"..$rekening_nr"';";
+		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr`='".$rekening_nr."';";
 		echo "done";
 	}
 ?>

@@ -1,7 +1,7 @@
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 
-var port = "/dev/tty.usbmodemfa131";
+var port = "COM3";
 
 var serialPort = new SerialPort(port , {
 	baudrate: 9600,
@@ -16,9 +16,12 @@ serialPort.on("open", function () {
 	console.log('open serial port');
 	serialPort.on('data', function(data) {
 		result = data.trim();
-		if (result.substring(1,4) == "card") {
+		console.log(result.substring(0,6));
+		if (result.substring(0,6) == "card: ") {
+			console.log(result.substring(6)+" card found");
 			loadCard(result);
 		}else{
+			console.log("keypad: '"+result+"'");
 			keypad(result);
 		}
 	});

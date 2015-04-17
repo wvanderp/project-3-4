@@ -9,6 +9,6 @@ var validateCode = null;
 var amount = 0;
 
 $(document).ready(function (argument) {
-	// loadView("mainMenu");
-	loadCard(1);
+	loadView("mainMenu");
+	// loadCard(1);
 });

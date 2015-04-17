@@ -8,8 +8,9 @@
 	},
 
 	"dependencies": {
-		"serialport": ">=1.6.1",
-		"printer": ">=0.1.1"
+		"node-pre-gyp": "*",
+		"serialport": "*",
+		"printer": "*"
 	},
 
 	"webkit": {

@@ -1,7 +1,9 @@
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 
-var serialPort = new SerialPort("COM3", {
+var port = "COM3";
+
+var serialPort = new SerialPort(port , {
 	baudrate: 9600,
 	dataBits: 8,
 	parity: 'none',
@@ -12,13 +14,19 @@ var serialPort = new SerialPort("COM3", {
 
 serialPort.on("open", function () {
 	console.log('open serial port');
-
 	serialPort.on('data', function(data) {
 		result = data.trim();
-		console.log('data received: ' + result);
+		console.log(result.substring(0,6));
+		if (result.substring(0,6) == "card: ") {
+			console.log(result.substring(6)+" card found");
+			// loadCard(result);
+		}else{
+			console.log("keypad: '"+result+"'");
+			// keypad(result);
+		}
 	});
 
 	serialPort.on('error', function (err) {
-		console.error("error", err);
+		console.log("Serial Error: "+err);
 	});
 });

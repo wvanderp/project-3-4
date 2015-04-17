@@ -5,12 +5,12 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
-		die("no rekening_nr found");
+		notFound("rekening nummer");
 	}
 
 	//check for a pincode
 	if(!isset($_GET["pincode"])){
-		die("no pincode found");
+		notFound("pincode not found");
 	}
 
 	if (!is_numeric($_GET["pincode"])) {
@@ -35,7 +35,7 @@
 		$query = "INSERT INTO `SkereDB`.`validatie` (`validatie_id`, `validatieToken`, `pasnr`, `rekeningNr`, `date`) VALUES (NUll, $valToken, $pasnr, $rekening_nr, $time) ";
 		mysqli_query($link, $query) or die(mysqli_error($link));
 
-		echo $valToken;
+		echo json_encode(array("data" => $valToken));
 	}
 ?>
 

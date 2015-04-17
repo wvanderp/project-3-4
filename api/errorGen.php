@@ -33,7 +33,7 @@
 		die();
 	}
 
-		function errorQuery($text){
+	function errorQuery($text){
 		$message = "error in query ".$text;
 		echo json_encode(array("error" => $message, "errornum" => 11));
 		die();
