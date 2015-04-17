@@ -8,9 +8,8 @@
 	},
 
 	"dependencies": {
-		"node-pre-gyp": "*",
-		"serialport": "*",
-		"printer": "*"
+		"printer": "*",
+		"socket.io": "*"
 	},
 
 	"webkit": {

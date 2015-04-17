@@ -7,7 +7,7 @@ function allHand(num){
 	//and the last has to submit the form so the loop is 3 +1
 	if(i < 3){
 		//make the next field a star for user feedback
-		$(".pinField:eq("+i+")").text("*");
+		$(".pinField:eq("+i+")").text("*");i
 		//add the number to the pin with a factor for position
 		pin += num*pinFactor;
 
@@ -32,10 +32,16 @@ function allHand(num){
 function checkPin(){
 	//check the pin that is entered
 	//the function is in /js/api.js
-	validateCode = validatePin(pin, pasNr);
-	if (validateCode != null) {
+	if (api.checkPin(pasNr, pin)) {
+		atempts = 0;
 		loadGeldVraag();
-	};
+	}else{
+		atempts++;
+		$(".pinField").text("");
+		factor = 1000;
+		i = 0;
+		pin = 0;
+	}
 }
 
   //-----------------------------------------\\

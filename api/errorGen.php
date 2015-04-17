@@ -11,6 +11,10 @@
 	// 11 conection error.
 	// 12 query error
 
+	//  21-30 data errors
+	//	21 no data  found
+	//	
+
 	function notFound($text){
 
 		$message = $text." not found in the url";
@@ -39,4 +43,11 @@
 		die();
 	}
 
+	//DATA ERROR
+
+	function noDataFound($text=""){
+		$message = "noDataFound ".$text;
+		echo json_encode(array("error" => $message, "errornum" => 21));
+		die();
+	}	
 ?>
