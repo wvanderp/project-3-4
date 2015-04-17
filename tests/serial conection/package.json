@@ -1,0 +1,8 @@
+{	
+	"name": "project-3-4",
+	"version": "0.1.0",
+
+	"dependencies": {
+		"serialport": ">=1.6.1"
+	}
+}
