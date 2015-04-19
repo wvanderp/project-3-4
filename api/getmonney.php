@@ -7,15 +7,21 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
+                $message = "rekening not found";
+                echo json_encode(array("error" => $message));
 		notFound("rekening nummer");
 	}
 
 	//check for a amount
 	if(!isset($_GET["amount"])){
+                $message = "hoeveelheid not found";
+                echo json_encode(array("error" => $message));
 		notFound("hoeveelheid");
 	}
 
 	if (!is_numeric($_GET["amount"])) {
+                $message = "amount not legit(not a number?)";
+                echo json_encode(array("error" => $message));
 		wrongType("ammount", "decimal number");
 	}
 
@@ -30,16 +36,21 @@
 	$result = mysqli_query($link, "SELECT saldo FROM `rekening` WHERE `rekening_nr` = ".$br." LIMIT 1 ") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
+                $message = "rekening not legit";
+                echo json_encode(array("error" => $message));
 		die("rekening nummer is niet bekent");
+
 	}else{
 		$temp = mysqli_fetch_array($result);
 		$saldo = $temp[0];
 		if ($saldo < $amount) {
+        	        $message = "not enough cash";
+	                echo json_encode(array("error" => $message));
 			die("niet genoeg saldo");
 		}
 		$saldo = $saldo - $amount;
 		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr`='".$rekening_nr."';";
-		echo "done";
+		echo json_encode(array("done"));
 	}
 ?>
 
