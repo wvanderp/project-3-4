@@ -24,26 +24,23 @@ function allHand(num){
 		pin += num*pinFactor;
 
 		//submit function
-		checkPin();
-	}
-}
-
-
-function checkPin(){
-	//check the pin that is entered
-	//the function is in /js/api.js
-	console.log(CheckPinCode(pasNr, pin));
-	if (CheckPinCode(pasNr, pin)) {
-		console.log("corect");
-		atempts = 0;
-		loadGeldVraag();
-	}else{
-		console.log("incorect")
-		atempts++;
-		$(".pinField").text("");
-		factor = 1000;
-		i = 0;
-		pin = 0;
+		// console.log(CheckPinCode(pasNr, pin));
+		var good = CheckPinCode(pasNr, pin);
+		if (good) {
+			console.log("corect");
+			console.log("pin was: "+pin);
+			atempts = 0;
+			loadGeldVraag();
+		}else{
+			console.log("incorect")
+			console.log("pin was: "+pin);
+			atempts++;
+			if (atempts < 3) {
+				loadView("pinInVullen");
+			}else{
+				loadView("pincodeFout");
+			};
+		}
 	}
 }
 

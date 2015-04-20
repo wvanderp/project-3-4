@@ -5,8 +5,8 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
-                $message = "rekening not found in the url";
-                echo json_encode(array("error" => $message));
+        $message = "rekening not found in the url";
+        echo json_encode(array("error" => $message));
 		die("no rekening_nr found");
 	}
 
