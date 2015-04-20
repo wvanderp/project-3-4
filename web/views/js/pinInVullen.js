@@ -32,10 +32,13 @@ function allHand(num){
 function checkPin(){
 	//check the pin that is entered
 	//the function is in /js/api.js
-	if (api.checkPin(pasNr, pin)) {
+	console.log(CheckPinCode(pasNr, pin));
+	if (CheckPinCode(pasNr, pin)) {
+		console.log("corect");
 		atempts = 0;
 		loadGeldVraag();
 	}else{
+		console.log("incorect")
 		atempts++;
 		$(".pinField").text("");
 		factor = 1000;

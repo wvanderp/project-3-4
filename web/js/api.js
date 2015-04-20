@@ -1,25 +1,12 @@
 var apiUrl = "http://hro.cwms.cc/api/";
-var api = {
-	pincode: {
-		checkPinUrl: apiUrl+"CheckPinCode.php",
-		checkPin: function (pasNr, pinCode) {
-			var ret = false;
-			$.post(api.PinCode.checkPinUrl+"?pasNr="+pasNr+"&pinCode="+pinCode, {}, function (data) {
-				ret = data
-			});
-			return ret;
-		}
-	},
-	bankRekening: {
-		getTypeUrl: apiUrl+"type.php",
-		getType: function (br) {
-			$.post(api.bankRekening.getTypeUrl+"?br="+br, {}, function (data) {
-				if (true) {
-					
-				};
-			});
-		}
-	},
-	validatieToken: "",
 
+function CheckPinCode (pasNr, pinCode) {
+	var ret = false;
+	console.log(apiUrl+"CheckPinCode.php?pasNr="+pasNr+"&pinCode="+pinCode);
+	return $.post(apiUrl+"CheckPinCode.php?pasNr="+pasNr+"&pinCode="+pinCode, {}, function (data) {
+		console.log("url data: "+data)
+		ret = data
+		return data;
+	});
+	// return ret;
 }
