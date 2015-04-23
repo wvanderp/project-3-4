@@ -2,7 +2,7 @@ var amount;
 
 function allHand (numer) {
 	amount = numer;
-	$(".moneybox").html("&euro;"+numer);
+	$(".moneybox").html("&euro;"+numer+",-");
 }
 
 function accept(numer){

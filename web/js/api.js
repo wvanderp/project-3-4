@@ -16,3 +16,20 @@ function CheckPinCode (pasNr, pinCode) {
 	});
 	return result;
 }
+
+function pas2bankrekening (pasNr) {
+	var result = null;
+	console.log(apiUrl+"pas2bankrekening.php?pasNr="+pasNr);
+	$.ajax({
+		url: apiUrl+"CheckPinCode.php",
+		data: {"pasNr": pasNr},
+		success: function (data) {
+			console.log(data);
+			// console.log("url data: "+data)
+			result = data;
+		},
+		async: false,
+		dataType: "json"
+	});
+	return result;
+}

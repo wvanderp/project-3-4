@@ -10,6 +10,6 @@ var amount = 0;
 
 $(document).ready(function () {
 	loadView("mainMenu");
-	// loadCard(1);
-	console.log(CheckPinCode(1,2345));
+	loadCard(1);
+	console.log(pas2bankrekening(1));
 });

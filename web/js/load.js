@@ -1,7 +1,12 @@
 function loadView(page){
-	$.get("views/"+page+".html",function(data){
-		// console.log(data);
-		$("#viewer").empty();
-		$("#viewer").html(data);
+	$.ajax({
+		url: "views/"+page+".html",
+		data: {},
+		success: function (data) {
+			$("#viewer").empty();
+			$("#viewer").html(data);
+		},
+		async: false,
+		dataType: "html"
 	});
 }

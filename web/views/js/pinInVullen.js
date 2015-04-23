@@ -36,7 +36,7 @@ function allHand(num){
 			console.log("pin was: "+pin);
 			atempts++;
 			if (atempts < 3) {
-				loadView("pinInVullen");
+				loadPinVragenMsg("pinInVullen");
 			}else{
 				loadView("pincodeFout");
 			};

@@ -5,7 +5,7 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["pasNr"])){
-                $message = "rekening not legit\not found";
+                $message = "rekening not found";
                 echo json_encode(array("error" => $message));
 		die("no rekening_nr found");
 	}
@@ -25,8 +25,8 @@
 	$result = mysqli_query($link, "SELECT 'rekening_nr' FROM 'Pas' WHERE `pas_id` = ".$pasnr." LIMIT 1 ") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
-                $message = "rekening not found";
-                echo json_encode(array("error" => $message));
+		$message = "rekening not found";
+		echo json_encode(array("error" => $message));
 		die("pas nr niet bekent");
 	}else{
 		$temp = mysqli_fetch_assoc($result);
