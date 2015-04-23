@@ -31,7 +31,7 @@
 	}else{
 		$temp = mysqli_fetch_assoc($result);
 
-		echo json(array("data" => $temp["rekening_nr"]));
+		echo json_encode(array("data" => $temp["rekening_nr"]));
 	}
 ?>
 
