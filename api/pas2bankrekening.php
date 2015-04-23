@@ -17,6 +17,7 @@
 	}
 
 	$link=mysqli_connect("localhost","root","skere","SkereDB");
+	// $link=mysqli_connect("localhost","root","","SkereDB");
 
 	$pasNr = $_GET["pasNr"];
 
@@ -31,7 +32,7 @@
 	}else{
 		$temp = mysqli_fetch_assoc($result);
 
-		echo json_encode(array("data" => $temp["rekening_nr"]));
+		echo json_encode($temp["rekening_nr"]);
 	}
 ?>
 
