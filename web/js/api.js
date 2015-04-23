@@ -21,12 +21,16 @@ function pas2bankrekening (pasNr) {
 	var result = null;
 	console.log(apiUrl+"pas2bankrekening.php?pasNr="+pasNr);
 	$.ajax({
-		url: apiUrl+"CheckPinCode.php",
+		url: apiUrl+"pas2bankrekening.php",
 		data: {"pasNr": pasNr},
 		success: function (data) {
 			console.log(data);
 			// console.log("url data: "+data)
 			result = data;
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			console.log(xhr.status);
+			console.log(xhr.responseText);
 		},
 		async: false,
 		dataType: "json"
