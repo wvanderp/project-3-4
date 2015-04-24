@@ -98,10 +98,9 @@ void loop()
 		//byte		sak;			// The SAK (Select acknowledge) byte returned from the PICC after successful selection.
 	        //} Uid;
          
-         Serial.println("card selected");
-         Serial.print(F("Card UID:"));
+         Serial.print(F("Card:"));
         for (byte i = 0; i < mfrc522.uid.size; i++) {
-                Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+                Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : "");
                 Serial.print(mfrc522.uid.uidByte[i], HEX);
         } 
         Serial.println();
