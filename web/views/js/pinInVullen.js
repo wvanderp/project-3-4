@@ -87,3 +87,22 @@ function eightKeyHand() {
 function nineKeyHand() {
 	allHand(9);	
 }
+
+function aKeyHand(){
+	
+}
+function bKeyHand(){
+	
+}
+function cKeyHand(){
+	
+}
+function dKeyHand(){
+	
+}
+function hashKeyHand(){
+	
+}
+function starHand(){
+	
+}

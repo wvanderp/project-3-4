@@ -30,7 +30,7 @@
 		die("rekening_nr niet bekent");
 	}else{
 		$temp = mysqli_fetch_array($result);
-                echo json_encode(array("data" => $temp[0]));
+                echo json_encode($temp[0]);
 	}
 ?>
 

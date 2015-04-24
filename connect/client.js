@@ -3,7 +3,7 @@ var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 var io = require("socket.io-client")('http://localhost:1234');
 
-var port = "COM3";
+var port = "COM8";
 
 var serialPort = new SerialPort(port , {
 	baudrate: 9600,
@@ -21,11 +21,13 @@ serialPort.on("open", function () {
 		console.log('open socket port');
 		serialPort.on('data', function(data) {
 			result = data.trim();
-			console.log(result.substring(0,6));
-			if (result.substring(0,6) == "card: ") {
+			// console.log(result.substring(0,4));
+			if (result.substring(0,5) == "Card:") {
 				console.log(result.substring(6)+" card found");
 				io.emit("card", result.substring(6));
 				// loadCard(result);
+			}else if(result.substring(0,4) == "Scan"){
+				console.log(result);
 			}else{
 				console.log("keypad: '"+result+"'");
 				io.emit("keystroke", result);

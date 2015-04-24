@@ -7,7 +7,7 @@ function CheckPinCode (pasNr, pinCode) {
 		url: apiUrl+"CheckPinCode.php",
 		data: {"pasNr": pasNr, "pinCode": pinCode},
 		success: function (data) {
-			// console.log(data);
+			console.log(data);
 			// console.log("url data: "+data)
 			result = data;
 		},
@@ -22,6 +22,27 @@ function pas2bankrekening (pasNr) {
 	console.log(apiUrl+"pas2bankrekening.php?pasNr="+pasNr);
 	$.ajax({
 		url: apiUrl+"pas2bankrekening.php",
+		data: {"pasNr": pasNr},
+		success: function (data) {
+			console.log(data);
+			// console.log("url data: "+data)
+			result = data;
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			console.log(xhr.status);
+			console.log(xhr.responseText);
+		},
+		async: false,
+		dataType: "json"
+	});
+	return result;
+}
+
+function getSaldo (bankRekeningNummer) {
+	var result = null;
+	console.log(apiUrl+"saldo.php?pasNr="+pasNr);
+	$.ajax({
+		url: apiUrl+"saldo.php",
 		data: {"pasNr": pasNr},
 		success: function (data) {
 			console.log(data);

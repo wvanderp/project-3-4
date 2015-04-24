@@ -40,19 +40,19 @@ function keypad (code){
 				console.log("key: 9");
 				nineKeyHand();
 			break;
-		case "a": // key: A
+		case "A": // key: A
 				console.log("key: A");
 				aKeyHand();
 			break;
-		case "b": // key: B
+		case "B": // key: B
 				console.log("key: B");
 				bKeyHand();
 			break;
-		case "c": // key: C
+		case "C": // key: C
 				console.log("key: C");
 				cKeyHand();
 		break;
-		case "d": // key: D
+		case "D": // key: D
 				console.log("key: D");
 				dKeyHand();
 			break;

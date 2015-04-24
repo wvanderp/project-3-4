@@ -1,5 +1,8 @@
 var amount;
 
+var bankrekening = pas2bankrekening(pasNr);
+var saldo = 
+
 function allHand (numer) {
 	amount = numer;
 	$(".moneybox").html("&euro;"+numer+",-");
@@ -13,6 +16,7 @@ function accept(numer){
 		loadGeldVraagMsg();
 	}
 }
+
 
   //-----------------------------------------\\
  //-after tis line you only find key handlers-\\
@@ -64,4 +68,23 @@ function hashKeyHand(){
 
 function starHand(){
 	console.log("no no");
+}
+
+function aKeyHand(){
+	
+}
+function bKeyHand(){
+	
+}
+function cKeyHand(){
+	
+}
+function dKeyHand(){
+	
+}
+function hashKeyHand(){
+	
+}
+function starHand(){
+	
 }
