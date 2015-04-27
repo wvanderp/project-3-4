@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function reload () {
 	clearInterval(interval);
-	location.reload();
+	reload();
 }
 
 h.afsluiting = {};

@@ -26,6 +26,7 @@
 	}
 
 	$link=mysqli_connect("localhost","root","skere","SkereDB") or die();
+	// $link=mysqli_connect("localhost","root","","SkereDB") or die();
 
 	$rekening_nr = $_GET["rekening_nr"];
 	$amount = $_GET["amount"];
@@ -50,7 +51,7 @@
 			die();
 		}
 		$saldo = $saldo - $amount;
-		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr`='".$rekening_nr."';";
+		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr` = '".$rekening_nr."';";
 		echo json_encode(array("done"));
 	}
 ?>
