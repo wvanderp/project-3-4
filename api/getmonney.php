@@ -51,8 +51,9 @@
 			die();
 		} else {
 			$newsaldo = $saldo - $amount;
-			$query = mysqli_query($link, "UPDATE `rekening` SET `saldo` ='".$newsaldo."' WHERE `rekening_nr` = '".$rekening_nr."');
+			$query = mysqli_query($link, "UPDATE `rekening` SET `saldo` ='".$newsaldo."' WHERE `rekening_nr` = '".$rekening_nr."'");
 			echo json_encode(array("done"));
 		}
+	}
 ?>
 
