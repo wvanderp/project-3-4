@@ -22,7 +22,7 @@
 
 	$rekening_nr = mysqli_real_escape_string($link, $rekening_nr);
 
-	$result = mysqli_query($link, "SELECT 'saldo' FROM `rekening` WHERE `rekening_nr` = ".$rekening_nr." LIMIT 1 ") or die(mysqli_error($link));
+	$result = mysqli_query($link, "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = ".$rekening_nr." LIMIT 1 ") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
                 $message = "rekening not found in the url";
