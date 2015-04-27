@@ -51,15 +51,9 @@
 			die();
 		} else {
 			$newsaldo = $saldo - $amount;
-			$query = mysqli_query($link, "UPDATE `rekening` SET `saldo` ='".$newsaldo."' WHERE `rekening_nr` = '".$rekening_nr."');
+			$query = mysqli_query($link, "UPDATE `rekening` SET `saldo` ='".$newsaldo."' WHERE `rekening_nr` = '".$rekening_nr."'");
 			echo json_encode(array("done"));
 		}
-<<<<<<< HEAD
-=======
-		$saldo = $saldo - $amount;
-		$query = "UPDATE `SkereDB`.`rekening` SET `saldo`='".$saldo."' WHERE `rekening_nr` = '".$rekening_nr."';";
-		echo json_encode(array("done"));
->>>>>>> 1dc222b4819d3d9a0edb68896959a13c98f73dcb
 	}
 ?>
 
