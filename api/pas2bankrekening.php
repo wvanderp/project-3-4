@@ -23,7 +23,7 @@
 
 	$pasNr = mysqli_real_escape_string($link, $pasNr);
 
-	$result = mysqli_query($link, "SELECT rekening_nr FROM `pas` WHERE `pas_id` =".$pasNr." LIMIT 1") or die(mysqli_error($link));
+	$result = mysqli_query($link, "SELECT rekening_nr FROM `pas` WHERE `pas_id` = '".$pasNr."' LIMIT 1") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
 		$message = "rekening not found";
