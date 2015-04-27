@@ -5,16 +5,16 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["pasNr"])){
-                $message = "rekening not found";
+                $message = "pasnummer not found";
                 echo json_encode(array("error" => $message));
 		die("no rekening_nr found");
 	}
 
-	if (!is_numeric($_GET["pasNr"])) {
-                $message = "rekening not legit";
-                echo json_encode(array("error" => $message));
-		die("pas nummer is not a number");
-	}
+	// if (!is_numeric($_GET["pasNr"])) {
+ //                $message = "rekening not legit";
+ //                echo json_encode(array("error" => $message));
+	// 	die("pas nummer is not a number");
+	// }
 
 	$link=mysqli_connect("localhost","root","skere","SkereDB");
 	// $link=mysqli_connect("localhost","root","","SkereDB");
