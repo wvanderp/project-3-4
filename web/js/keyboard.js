@@ -4,64 +4,64 @@ window.onkeydown = function (e) {
 	switch(code) {
 		case 48: // key: 0
 				console.log("key: 0");
-				zeroKeyHand();
+				h[state].zeroKeyHand();
 			break;
 		case 49: // key: 1
 				console.log("key: 1");
-				oneKeyHand();
+				h[state].oneKeyHand();
 			break;
 		case 50: // key: 2
 				console.log("key: 2");
-				twoKeyHand();
+				h[state].twoKeyHand();
 			break;
 		case 51: // key: 3
 				console.log("key: 3");
-				treeKeyHand();
+				h[state].treeKeyHand();
 			break;
 		case 52: // key: 4
 				console.log("key: 4");
-				fourKeyHand();
+				h[state].fourKeyHand();
 			break;
 		case 53: // key: 5
 				console.log("key: 5");
-				fiveKeyHand();
+				h[state].fiveKeyHand();
 			break;
 		case 54: // key: 6
 				console.log("key: 6");
-				sixKeyHand();
+				h[state].sixKeyHand();
 			break;
 		case 55: // key: 7
 				console.log("key: 7");
-				sevenKeyHand();
+				h[state].sevenKeyHand();
 			break;
 		case 56: // key: 8
 				console.log("key: 8");
-				eightKeyHand();
+				h[state].eightKeyHand();
 			break;
 		case 57: // key: 9
 				console.log("key: 9");
-				nineKeyHand();
+				h[state].nineKeyHand();
 			break;
 		case 65: // key: A
 				console.log("key: A");
-				aKeyHand();
+				h[state].aKeyHand();
 			break;
 		case 66: // key: B
 				console.log("key: B");
-				bKeyHand();
+				h[state].bKeyHand();
 			break;
 		case 67: // key: C
 				console.log("key: C");
-				cKeyHand();
+				h[state].cKeyHand();
 			break;
 		case 68: // key: D
 				console.log("key: D");
-				dKeyHand();
+				h[state].dKeyHand();
 			break;
 		case 72: // key: #(HASH) or H
 				//it isnt Hasj
 				console.log("key: #");
-				hashKeyHand();
+				h[state].hashKeyHand();
 			break;
 		case 83: // key: *(STAR) or S
 				console.log("key: *");
@@ -70,7 +70,7 @@ window.onkeydown = function (e) {
 		case 74: // key: j
 				//it isnt Hasj
 				console.log("key: #");
-				hashKeyHand();
+				h[state].hashKeyHand();
 			break;
 		case 78: // key: n
 				console.log("key: *");

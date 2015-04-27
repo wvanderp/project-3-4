@@ -40,10 +40,10 @@ function pas2bankrekening (pasNr) {
 
 function getSaldo (bankRekeningNummer) {
 	var result = null;
-	console.log(apiUrl+"saldo.php?pasNr="+pasNr);
+	console.log(apiUrl+"saldo.php?rekening_nr="+bankRekeningNummer);
 	$.ajax({
 		url: apiUrl+"saldo.php",
-		data: {"pasNr": pasNr},
+		data: {"rekening_nr": bankRekeningNummer},
 		success: function (data) {
 			console.log(data);
 			// console.log("url data: "+data)

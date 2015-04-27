@@ -2,64 +2,64 @@ function keypad (code){
 	switch(code) {
 		case "0": // key: 0
 				console.log("key: 0");
-				zeroKeyHand();
+				h[state].zeroKeyHand();
 			break;
 		case "1": // key: 1
 				console.log("key: 1");
-				oneKeyHand();
+				h[state].oneKeyHand();
 			break;
 		case "2": // key: 2
 				console.log("key: 2");
-				twoKeyHand();
+				h[state].twoKeyHand();
 			break;
 		case "3": // key: 3
 				console.log("key: 3");
-				treeKeyHand();
+				h[state].treeKeyHand();
 			break;
 		case "4": // key: 4
 				console.log("key: 4");
-				fourKeyHand();
+				h[state].fourKeyHand();
 			break;
 		case "5": // key: 5
 				console.log("key: 5");
-				fiveKeyHand();
+				h[state].fiveKeyHand();
 			break;
 		case "6": // key: 6
 				console.log("key: 6");
-				sixKeyHand();
+				h[state].sixKeyHand();
 			break;
 		case "7": // key: 7
 				console.log("key: 7");
-				sevenKeyHand();
+				h[state].sevenKeyHand();
 			break;
 		case "8": // key: 8
 				console.log("key: 8");
-				eightKeyHand();
+				h[state].eightKeyHand();
 			break;
 		case "9": // key: 9
 				console.log("key: 9");
-				nineKeyHand();
+				h[state].nineKeyHand();
 			break;
 		case "A": // key: A
 				console.log("key: A");
-				aKeyHand();
+				h[state].aKeyHand();
 			break;
 		case "B": // key: B
 				console.log("key: B");
-				bKeyHand();
+				h[state].bKeyHand();
 			break;
 		case "C": // key: C
 				console.log("key: C");
-				cKeyHand();
+				h[state].cKeyHand();
 		break;
 		case "D": // key: D
 				console.log("key: D");
-				dKeyHand();
+				h[state].dKeyHand();
 			break;
 		case "#": // key: #(HASH) or H
 				//it isnt Hasj
 				console.log("key: #");
-				hashKeyHand();
+				h[state].hashKeyHand();
 			break;
 		case "*": // key: *(STAR) or S
 				console.log("key: *");

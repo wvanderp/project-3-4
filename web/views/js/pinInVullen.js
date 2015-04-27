@@ -47,60 +47,60 @@ function allHand(num){
   //-----------------------------------------\\
  //-after tis line you only find key handlers-\\
 //---------------------------------------------\\
-
-function zeroKeyHand() {
+h.pinInVullen = {};
+h.pinInVullen.zeroKeyHand = function () {
 	allHand(0);	
 }
 
-function oneKeyHand() {
+h.pinInVullen.oneKeyHand = function () {
 	allHand(1);	
 }
 
-function twoKeyHand() {
+h.pinInVullen.twoKeyHand = function () {
 	allHand(2);	
 }
 
-function treeKeyHand() {
+h.pinInVullen.treeKeyHand = function () {
 	allHand(3);	
 }
 
-function fourKeyHand() {
+h.pinInVullen.fourKeyHand = function () {
 	allHand(4);	
 }
 
-function fiveKeyHand() {
+h.pinInVullen.fiveKeyHand = function () {
 	allHand(5);	
 }
 
-function sixKeyHand() {
+h.pinInVullen.sixKeyHand = function () {
 	allHand(6);	
 }
 
-function sevenKeyHand() {
+h.pinInVullen.sevenKeyHand = function () {
 	allHand(7);	
 }
 
-function eightKeyHand() {
+h.pinInVullen.eightKeyHand = function () {
 	allHand(8);	
 }
 
-function nineKeyHand() {
+h.pinInVullen.nineKeyHand = function () {
 	allHand(9);	
 }
 
-function aKeyHand(){
+h.pinInVullen.aKeyHand = function (){
 	
 }
-function bKeyHand(){
+h.pinInVullen.bKeyHand = function (){
 	
 }
-function cKeyHand(){
+h.pinInVullen.cKeyHand = function (){
 	
 }
-function dKeyHand(){
+h.pinInVullen.dKeyHand = function (){
 	
 }
-function hashKeyHand(){
+h.pinInVullen.hashKeyHand = function (){
 	
 }
 function starHand(){

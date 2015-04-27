@@ -8,6 +8,10 @@ var validateCode = null;
 //var for geldvragen
 var amount = 0;
 
+var state = "mainMenu";
+var h = {};
+
+
 $(document).ready(function () {
 	loadView("mainMenu");
 	// loadCard(1);

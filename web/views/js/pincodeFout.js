@@ -10,51 +10,51 @@ function reload () {
 	location.reload();
 }
 
-function zeroKeyHand(){
+h.pincodeFout.zeroKeyHand = function (){
 	
 }
-function oneKeyHand(){
+h.pincodeFout.oneKeyHand = function (){
 	
 }
-function twoKeyHand(){
+h.pincodeFout.twoKeyHand = function (){
 	
 }
-function treeKeyHand(){
+h.pincodeFout.treeKeyHand = function (){
 	
 }
-function fourKeyHand(){
+h.pincodeFout.fourKeyHand = function (){
 	
 }
-function fiveKeyHand(){
+h.pincodeFout.fiveKeyHand = function (){
 	
 }
-function sixKeyHand(){
+h.pincodeFout.sixKeyHand = function (){
 	
 }
-function sevenKeyHand(){
+h.pincodeFout.sevenKeyHand = function (){
 	
 }
-function eightKeyHand(){
+h.pincodeFout.eightKeyHand = function (){
 	
 }
-function nineKeyHand(){
+h.pincodeFout.nineKeyHand = function (){
 	
 }
-function aKeyHand(){
+h.pincodeFout.aKeyHand = function (){
 	
 }
-function bKeyHand(){
+h.pincodeFout.bKeyHand = function (){
 	
 }
-function cKeyHand(){
+h.pincodeFout.cKeyHand = function (){
 	
 }
-function dKeyHand(){
+h.pincodeFout.dKeyHand = function (){
 	
 }
-function hashKeyHand(){
+h.pincodeFout.hashKeyHand = function (){
 	
 }
-function starHand(){
+h.pincodeFout.starKeyHand = function (){
 	
 }

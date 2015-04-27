@@ -10,7 +10,7 @@
 		die("no rekening_nr found");
 	}
 
-	if (!checkBankrekening($_GET["rekening_nr"])) {
+	if (!is_numeric($_GET["rekening_nr"])) {
 		$message = "rekening not legit";
                 echo json_encode(array("error" => $message));
 		die("rekening nummer is niet geldig");

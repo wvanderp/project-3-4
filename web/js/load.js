@@ -9,4 +9,5 @@ function loadView(page){
 		async: false,
 		dataType: "html"
 	});
+	state = page;
 }

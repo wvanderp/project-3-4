@@ -1,7 +1,7 @@
 var amount;
 
 var bankrekening = pas2bankrekening(pasNr);
-var saldo = 
+var saldo = getSaldo(bankrekening);
 
 function allHand (numer) {
 	amount = numer;
@@ -21,48 +21,48 @@ function accept(numer){
   //-----------------------------------------\\
  //-after tis line you only find key handlers-\\
 //---------------------------------------------\\
-
-function zeroKeyHand() {
+h.geldVragen = {};
+h.geldVragen.zeroKeyHand = function () {
 	console.log("no zero function")
 }
 
-function oneKeyHand() {
+h.geldVragen.oneKeyHand = function () {
 	allHand(5);	
 }
 
-function twoKeyHand() {
+h.geldVragen.twoKeyHand = function () {
 	allHand(10);	
 }
 
-function treeKeyHand() {
+h.geldVragen.treeKeyHand = function () {
 	allHand(20);	
 }
 
-function fourKeyHand() {
+h.geldVragen.fourKeyHand = function () {
 	allHand(50);	
 }
 
-function fiveKeyHand() {
+h.geldVragen.fiveKeyHand = function () {
 	allHand(100);	
 }
 
-function sixKeyHand() {
+h.geldVragen.sixKeyHand = function () {
 	allHand(200);	
 }
 
-function sevenKeyHand() {
+h.geldVragen.sevenKeyHand = function () {
 	allHand(500);	
 }
 
-function eightKeyHand() {
+h.geldVragen.eightKeyHand = function () {
 	console.log("no eight function")
 }
 
-function nineKeyHand() {
+h.geldVragen.nineKeyHand = function () {
 	console.log("no nine function")
 }
 
-function hashKeyHand(){
+h.geldVragen.hashKeyHand = function (){
 	accept(amount);
 }
 
@@ -70,19 +70,19 @@ function starHand(){
 	console.log("no no");
 }
 
-function aKeyHand(){
+h.geldVragen.aKeyHand = function (){
 	
 }
-function bKeyHand(){
+h.geldVragen.bKeyHand = function (){
 	
 }
-function cKeyHand(){
+h.geldVragen.cKeyHand = function (){
 	
 }
-function dKeyHand(){
+h.geldVragen.dKeyHand = function (){
 	
 }
-function hashKeyHand(){
+h.geldVragen.hashKeyHand = function (){
 	
 }
 function starHand(){
