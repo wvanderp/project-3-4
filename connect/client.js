@@ -38,4 +38,9 @@ serialPort.on("open", function () {
 			console.log("Serial Error: "+err);
 		});
 	});
+	// io.on('disconnect', function () {
+	// 	console.log('disconnect client event....');
+	// 	// io.reconnect();
+	// });
+	console.log("close sirial port");
 });
