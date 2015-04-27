@@ -61,7 +61,7 @@ function getSaldo (bankRekeningNummer) {
 
 function transactie (bankRekeningNummer, amount) {
 	var result = null;
-	console.log(apiUrl+"getmonney.php?rekening_nr="+bankRekeningNummer+"");
+	console.log(apiUrl+"getmonney.php?rekening_nr="+bankRekeningNummer+"&amount="+amount);
 	$.ajax({
 		url: apiUrl+"getmonney.php",
 		data: {"rekening_nr": bankRekeningNummer,

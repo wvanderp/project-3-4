@@ -7,7 +7,7 @@
 
 	//zeker weten dat rekening_nr is ingevult
 	if(!isset($_GET["rekening_nr"])){
-        $message = "rekening_nr not found";
+        $message = "rekening_nr not found in url";
         echo json_encode(array("error" => $message));
 		notFound("rekening nummer");
 	}
@@ -30,15 +30,15 @@
 	$rekening_nr = $_GET["br"];
 	$amount = $_GET["amount"];
 
-	$br = mysqli_real_escape_string($link, $rekening_nr);
-	$amount = mysqli_real_escape_string($link, $amount);
+	$br = trim(mysqli_real_escape_string($link, $rekening_nr));
+	$amount = trim(mysqli_real_escape_string($link, $amount));
 
 	$result = mysqli_query($link, "SELECT saldo FROM `rekening` WHERE `rekening_nr` = '".$br."' LIMIT 1 ") or die(mysqli_error($link));
 
 	if (mysqli_num_rows($result) == 0) {
-                $message = "rekening not in db";
-                echo json_encode(array("error" => $message));
-		die("rekening nummer is niet bekent");
+        $message = "rekening not in db";
+        echo json_encode(array("error" => $message));
+		die();
 
 	}else{
 		$temp = mysqli_fetch_array($result);
