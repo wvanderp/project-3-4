@@ -29,12 +29,13 @@
 
 	$rekening_nr = $_GET["br"];
 	$amount = $_GET["amount"];
-
-	$br = trim(mysqli_real_escape_string($link, $rekening_nr));
+	echo $rekening_nr;
+	$rekening_nr = trim(mysqli_real_escape_string($link, $rekening_nr));
 	$amount = trim(mysqli_real_escape_string($link, $amount));
 
-	$result = mysqli_query($link, "SELECT saldo FROM `rekening` WHERE `rekening_nr` = '".$br."' LIMIT 1 ") or die(mysqli_error($link));
-
+	$result = mysqli_query($link, "SELECT saldo FROM `rekening` WHERE `rekening_nr` = '".$rekening_nr."' LIMIT 1 ") or die(mysqli_error($link));
+	//var_dump("SELECT saldo FROM `rekening` WHERE `rekening_nr` = '".$rekening_nr."' LIMIT 1 ");
+	echo $rekening_nr;
 	if (mysqli_num_rows($result) == 0) {
         $message = "rekening not in db";
         echo json_encode(array("error" => $message));
@@ -44,8 +45,8 @@
 		$temp = mysqli_fetch_array($result);
 		$saldo = $temp[0];
 		if ($saldo < $amount) {
-        	$message = "not enough cash";
-	        echo json_encode(array("error" => $message));
+        		$message = "not enough cash";
+	        	echo json_encode(array("error" => $message));
 			die();
 		}
 		$saldo = $saldo - $amount;
