@@ -27,9 +27,9 @@
 
 	$link=mysqli_connect("localhost","root","skere","SkereDB") or die();
 
-	$rekening_nr = $_GET["br"];
+	$rekening_nr = $_GET["rekening_nr"];
 	$amount = $_GET["amount"];
-	echo $rekening_nr;
+
 	$rekening_nr = trim(mysqli_real_escape_string($link, $rekening_nr));
 	$amount = trim(mysqli_real_escape_string($link, $amount));
 
