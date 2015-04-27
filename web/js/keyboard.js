@@ -64,15 +64,15 @@ window.onkeydown = function (e) {
 				h[state].hashKeyHand();
 			break;
 		case 83: // key: *(STAR) or S
-				console.log("key: *");
+				console.log("key: J");
 				starHand();
 			break;
-		case 74: // key: j
+		case 74: // key: #
 				//it isnt Hasj
 				console.log("key: #");
 				h[state].hashKeyHand();
 			break;
-		case 78: // key: n
+		case 78: // key: *
 				console.log("key: *");
 				starHand();
 			break;

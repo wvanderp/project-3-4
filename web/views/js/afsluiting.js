@@ -1,48 +1,59 @@
-h.saldoVragen.zeroKeyHand = function (){
+$(document).ready(function () {
+	interval = setInterval(reload, 10000);
+	console.log("brouser will reload in 10 sec");
+});
+
+function reload () {
+	clearInterval(interval);
+	location.reload();
+}
+
+h.afsluiting = {};
+h.afsluiting.zeroKeyHand = function (){
 	
 }
-h.saldoVragen.oneKeyHand = function (){
+h.afsluiting.oneKeyHand = function (){
 	
 }
-h.saldoVragen.twoKeyHand = function (){
+h.afsluiting.twoKeyHand = function (){
 	
 }
-h.saldoVragen.treeKeyHand = function (){
+h.afsluiting.treeKeyHand = function (){
 	
 }
-h.saldoVragen.fourKeyHand = function (){
+h.afsluiting.fourKeyHand = function (){
 	
 }
-h.saldoVragen.fiveKeyHand = function (){
+h.afsluiting.fiveKeyHand = function (){
 	
 }
-h.saldoVragen.sixKeyHand = function (){
+h.afsluiting.sixKeyHand = function (){
 	
 }
-h.saldoVragen.sevenKeyHand = function (){
+h.afsluiting.sevenKeyHand = function (){
 	
 }
-h.saldoVragen.eightKeyHand = function (){
+h.afsluiting.eightKeyHand = function (){
 	
 }
-h.saldoVragen.nineKeyHand = function (){
+h.afsluiting.nineKeyHand = function (){
 	
 }
-h.saldoVragen.aKeyHand = function (){
+h.afsluiting.aKeyHand = function (){
 	
 }
-h.saldoVragen.bKeyHand = function (){
+h.afsluiting.bKeyHand = function (){
 	
 }
-h.saldoVragen.cKeyHand = function (){
+h.afsluiting.cKeyHand = function (){
 	
 }
-h.saldoVragen.dKeyHand = function (){
+h.afsluiting.dKeyHand = function (){
 	
 }
-h.saldoVragen.hashKeyHand = function (){
+h.afsluiting.hashKeyHand = function (){
 	
 }
-h.saldoVragen.starKeyHand = function (){
+h.afsluiting.starKeyHand = function (){
 	
 }

@@ -1,49 +1,49 @@
-h.saldoVragen = {};
-h.saldoVragen.zeroKeyHand = function (){
+h.mainMenu = {};
+h.mainMenu.zeroKeyHand = function (){
 	
 }
-h.saldoVragen.oneKeyHand = function (){
+h.mainMenu.oneKeyHand = function (){
 	
 }
-h.saldoVragen.twoKeyHand = function (){
+h.mainMenu.twoKeyHand = function (){
 	
 }
-h.saldoVragen.treeKeyHand = function (){
+h.mainMenu.treeKeyHand = function (){
 	
 }
-h.saldoVragen.fourKeyHand = function (){
+h.mainMenu.fourKeyHand = function (){
 	
 }
-h.saldoVragen.fiveKeyHand = function (){
+h.mainMenu.fiveKeyHand = function (){
 	
 }
-h.saldoVragen.sixKeyHand = function (){
+h.mainMenu.sixKeyHand = function (){
 	
 }
-h.saldoVragen.sevenKeyHand = function (){
+h.mainMenu.sevenKeyHand = function (){
 	
 }
-h.saldoVragen.eightKeyHand = function (){
+h.mainMenu.eightKeyHand = function (){
 	
 }
-h.saldoVragen.nineKeyHand = function (){
+h.mainMenu.nineKeyHand = function (){
 	
 }
-h.saldoVragen.aKeyHand = function (){
+h.mainMenu.aKeyHand = function (){
 	
 }
-h.saldoVragen.bKeyHand = function (){
+h.mainMenu.bKeyHand = function (){
 	
 }
-h.saldoVragen.cKeyHand = function (){
+h.mainMenu.cKeyHand = function (){
 	
 }
-h.saldoVragen.dKeyHand = function (){
+h.mainMenu.dKeyHand = function (){
 	
 }
-h.saldoVragen.hashKeyHand = function (){
+h.mainMenu.hashKeyHand = function (){
 	
 }
-h.saldoVragen.starKeyHand = function (){
+h.mainMenu.starKeyHand = function (){
 	
 }

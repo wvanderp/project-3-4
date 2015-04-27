@@ -58,3 +58,26 @@ function getSaldo (bankRekeningNummer) {
 	});
 	return result;
 }
+
+function transactie (bankRekeningNummer, amount) {
+	var result = null;
+	console.log(apiUrl+"getmonney.php?rekening_nr="+bankRekeningNummer+"");
+	$.ajax({
+		url: apiUrl+"getmonney.php",
+		data: {"rekening_nr": bankRekeningNummer,
+				"amount" : amount
+		},
+		success: function (data) {
+			console.log(data);
+			// console.log("url data: "+data)
+			result = data;
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			console.log(xhr.status);
+			console.log(xhr.responseText);
+		},
+		async: false,
+		dataType: "json"
+	});
+	return result;
+}

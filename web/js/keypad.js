@@ -63,7 +63,16 @@ function keypad (code){
 			break;
 		case "*": // key: *(STAR) or S
 				console.log("key: *");
-				starHand();
+				h[state].starKeyHand();
+			break;
+		case "J": // key: #(HASH) or H
+				//it isnt Hasj
+				console.log("key: J");
+				h[state].hashKeyHand();
+			break;
+		case "N": // key: *(STAR) or S
+				console.log("key: N");
+				h[state].starKeyHand();
 			break;
 	    default:
 	        
