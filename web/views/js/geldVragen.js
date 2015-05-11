@@ -92,7 +92,7 @@ h.geldVragen.hashKeyHand = function (){
 	getPaid();
 }
 
-function starHand(){
+h.geldVragen.starKeyHand = function (){
 	console.log("no no");
 }
 

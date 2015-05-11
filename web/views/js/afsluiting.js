@@ -1,11 +1,12 @@
+var afInterval = null;
 $(document).ready(function () {
-	interval = setInterval(reload, 10000);
+	afInterval = setInterval(reload, 10000);
 	console.log("brouser will reload in 10 sec");
 });
 
 function reload () {
-	clearInterval(interval);
-	reload();
+	clearInterval(afInterval);
+	resetAll();
 }
 
 h.afsluiting = {};

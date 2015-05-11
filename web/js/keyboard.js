@@ -74,7 +74,7 @@ window.onkeydown = function (e) {
 			break;
 		case 78: // key: *
 				console.log("key: *");
-				starHand();
+				h[state].starKeyHand();
 			break;
 		case 76: // key: L (for loading card) 
 				console.log("key: load");

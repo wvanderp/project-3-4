@@ -10,7 +10,8 @@
 	},
 
 	"dependencies": {
-		"node-serial": ">=0.1.1"
+		"printer": "*",
+		"socket.io": "*"
 	},
 
 	"webkit": {

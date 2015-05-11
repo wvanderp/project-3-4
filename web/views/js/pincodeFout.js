@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function reload () {
 	clearInterval(interval);
-	location.reload();
+	resetAll();
 }
 
 h.pincodeFout.zeroKeyHand = function (){
