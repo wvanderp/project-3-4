@@ -6,7 +6,7 @@ function loadCard (_pasNr) {
 }
 
 function loadGeldVraagMsg (msg) {
-	$("#geldMsg").text("je hebt niet genoeg geld");
+	$("#geldMsg").text("U beschikt niet over genoeg saldo.");
 }
 
 function loadPinVragenMsg () {
