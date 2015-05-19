@@ -12,5 +12,5 @@ function loadGeldVraagMsg (msg) {
 function loadPinVragenMsg () {
 	//laad hel pin invullen view en voegt er dan een bericht aan de view.
 	loadView("pinInVullen");
-	$("#errorbox").html("U heeft uw pin code verkeerd ingevult.<br>poging "+atempts);
+	$("#errorbox").html("U heeft uw pincode verkeerd ingevuld.<br> Poging "+atempts);
 }

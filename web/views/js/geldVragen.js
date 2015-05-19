@@ -10,7 +10,7 @@ function allHand (numer) {
 		amount = numer;
 		$(".moneybox").html("&euro;"+numer+",-");
 	}else{
-		$("#geldMsg").text("niet genoeg saldo");
+		$("#geldMsg").text("U beschikt niet over genoeg saldo. Kies een ander bedrag.");
 	}
 }
 
