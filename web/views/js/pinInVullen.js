@@ -30,7 +30,7 @@ function allHand(num){
 			console.log("corect");
 			console.log("pin was: "+pin);
 			atempts = 0;
-			loadGeldVraag();
+			loadView("mainMenu");
 		}else{
 			console.log("incorect")
 			console.log("pin was: "+pin);

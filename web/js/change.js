@@ -1,12 +1,8 @@
 function loadCard (_pasNr) {
-	if (state == "mainMenu") {	
+	if (state == "startMenu") {	
 		pasNr = _pasNr;
 		loadView("pinInVullen");
 	};
-}
-
-function loadGeldVraag () {
-	loadView("geldVragen");
 }
 
 function loadGeldVraagMsg (msg) {

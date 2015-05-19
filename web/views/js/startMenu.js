@@ -1,6 +1,4 @@
-
 h.mainMenu = {};
-
 h.mainMenu.zeroKeyHand = function (){
 	
 }
@@ -32,16 +30,16 @@ h.mainMenu.nineKeyHand = function (){
 	
 }
 h.mainMenu.aKeyHand = function (){
-	loadView("saldoVragen");
+	
 }
 h.mainMenu.bKeyHand = function (){
-	loadView("geldVragen");
+	
 }
 h.mainMenu.cKeyHand = function (){
 	
 }
 h.mainMenu.dKeyHand = function (){
-	resetAll();
+	
 }
 h.mainMenu.hashKeyHand = function (){
 	

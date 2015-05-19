@@ -23,5 +23,5 @@ function resetAll () {
 	// for geldvragen
 	 amount = 0;
 
-	loadView("mainMenu");
+	loadView("startMenu");
 }

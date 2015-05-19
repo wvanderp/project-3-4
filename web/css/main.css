@@ -33,3 +33,18 @@ li b{
 	text-align: center;
 
 }
+
+.mButton{
+	background-color: gray;
+	color: white;
+	font-size: 200%;
+	padding:5px;
+	width: 50px;
+	text-align: center;
+	margin: 7px;
+}
+
+.menuItem{
+	text-align: center;
+	margin: 10px;
+}
