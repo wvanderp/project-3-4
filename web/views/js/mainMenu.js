@@ -41,11 +41,11 @@ h.mainMenu.cKeyHand = function (){
 	
 }
 h.mainMenu.dKeyHand = function (){
-	resetAll();
+
 }
 h.mainMenu.hashKeyHand = function (){
 	
 }
 h.mainMenu.starKeyHand = function (){
-	
+	resetAll();
 }

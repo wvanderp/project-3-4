@@ -22,25 +22,25 @@ function getPaid(){
 
 function style () {
 	if(saldo < 5){
-		$(".moneylist ol li:eq(0)").css("text-decoration","line-through");
+		$(".moneyImg:eq(0)").attr("src", "images/5EuroGray.png");
 	}
 	if(saldo < 10){
-		$(".moneylist ol li:eq(1)").css("text-decoration","line-through");
+		$(".moneyImg:eq(2)").attr("src", "images/10EuroGray.png");
 	}
 	if(saldo < 20){
-		$(".moneylist ol li:eq(2)").css("text-decoration","line-through");
+		$(".moneyImg:eq(4)").attr("src", "images/20EuroGray.png");
 	}
 	if(saldo < 50){
-		$(".moneylist ol li:eq(3)").css("text-decoration","line-through");
+		$(".moneyImg:eq(6)").attr("src", "images/50EuroGray.png");
 	}
 	if(saldo < 100){
-		$(".moneylist ol li:eq(4)").css("text-decoration","line-through");
+		$(".moneyImg:eq(1)").attr("src", "images/100EuroGray.png");
 	}
 	if(saldo < 200){
-		$(".moneylist ol li:eq(5)").css("text-decoration","line-through");
+		$(".moneyImg:eq(3)").attr("src", "images/200EuroGray.png");
 	}
 	if(saldo < 500){
-		$(".moneylist ol li:eq(6)").css("text-decoration","line-through");
+		$(".moneyImg:eq(5)").attr("src", "images/500EuroGray.png");
 	}
 }
 
@@ -81,7 +81,7 @@ h.geldVragen.sevenKeyHand = function () {
 }
 
 h.geldVragen.eightKeyHand = function () {
-	console.log("no eight function")
+	loadView("customBedrag");
 }
 
 h.geldVragen.nineKeyHand = function () {
@@ -93,7 +93,7 @@ h.geldVragen.hashKeyHand = function (){
 }
 
 h.geldVragen.starKeyHand = function (){
-	console.log("no no");
+	loadView("mainMenu");
 }
 
 h.geldVragen.aKeyHand = function (){}

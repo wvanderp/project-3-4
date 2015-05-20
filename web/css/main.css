@@ -48,3 +48,21 @@ li b{
 	text-align: center;
 	margin: 10px;
 }
+
+.moneyImg{
+	width: 100px; 
+	height: 55px;
+}
+
+	
+.moneyGray{
+/*	background-color: yellow;
+	height: 25px;*/
+	filter: grayscale(50%);
+/*	filter: saturate(50%);
+	// Browser Specific
+	-webkit-filter: saturate(50%);
+	-moz-filter: saturate(50%);
+	-o-filter: saturate(50%);
+	-ms-filter: saturate(50%);*/
+}

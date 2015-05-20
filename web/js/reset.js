@@ -1,4 +1,5 @@
 function resetAll () {
+	console.log("full reset");
 	 i = 0;
 	 pin = 0;
 	 pinFactor = 1000;

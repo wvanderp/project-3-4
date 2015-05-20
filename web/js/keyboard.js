@@ -65,7 +65,7 @@ window.onkeydown = function (e) {
 			break;
 		case 83: // key: *(STAR) or S
 				console.log("key: J");
-				starHand();
+				h[state].starKeyHand();
 			break;
 		case 74: // key: #
 				//it isnt Hasj
