@@ -1,4 +1,4 @@
-var apiUrl = "http://hro.cwms.cc/api/";
+var apiUrl = "http://hro.cwms.cc/api/old/";
 
 function CheckPinCode (pasNr, pinCode) {
 	var result = null;
