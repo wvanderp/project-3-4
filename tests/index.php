@@ -1,4 +1,7 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+
 	require_once 'server.php';
 	require_once 'login.php';
 	require_once 'balance.php';
