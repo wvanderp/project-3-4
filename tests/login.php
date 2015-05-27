@@ -15,9 +15,17 @@
 		$httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 		if($httpCode == 404) {
 		    echo "<h3>login NOT found</h3>";
+		    curl_close($handle);
+		    return;
 		}
 
-		curl_close($handle);
+		if ($httpCode != 200) {
+		    echo "<h3>other response code</h3>";
+			curl_close($handle);
+		    return;
+		}
+
+		
 
 		/* Handle $response here. */
 	}
