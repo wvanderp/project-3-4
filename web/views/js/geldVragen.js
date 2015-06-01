@@ -69,19 +69,19 @@ h.geldVragen.fourKeyHand = function () {
 }
 
 h.geldVragen.fiveKeyHand = function () {
-	allHand(100);	
+	loadView("customBedrag");	
 }
 
 h.geldVragen.sixKeyHand = function () {
-	allHand(200);	
+		
 }
 
 h.geldVragen.sevenKeyHand = function () {
-	allHand(500);	
+		
 }
 
 h.geldVragen.eightKeyHand = function () {
-	loadView("customBedrag");
+	
 }
 
 h.geldVragen.nineKeyHand = function () {

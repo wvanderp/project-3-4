@@ -1,7 +1,7 @@
 var bankrekening = pas2bankrekening(pasNr);
 var saldo = getSaldo(bankrekening);
 
-$("#saldo").text(saldo+" €");
+$("#saldo").text("€"+saldo+",-");
 
 h.saldoVragen = {};
 
@@ -36,7 +36,7 @@ h.saldoVragen.nineKeyHand = function (){
 	
 }
 h.saldoVragen.aKeyHand = function (){
-	
+	loadView("geldVragen");
 }
 h.saldoVragen.bKeyHand = function (){
 	
