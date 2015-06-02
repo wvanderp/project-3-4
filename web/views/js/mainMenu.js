@@ -1,3 +1,6 @@
+var pashouder = pas2bankrekening(pashouder);
+
+$("#pashouder").text("Welkom, "+pashouder);
 
 h.mainMenu = {};
 

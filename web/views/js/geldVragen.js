@@ -53,23 +53,23 @@ h.geldVragen.zeroKeyHand = function () {
 }
 
 h.geldVragen.oneKeyHand = function () {
-	allHand(5);	
-}
-
-h.geldVragen.twoKeyHand = function () {
 	allHand(10);	
 }
 
-h.geldVragen.treeKeyHand = function () {
+h.geldVragen.twoKeyHand = function () {
 	allHand(20);	
 }
 
-h.geldVragen.fourKeyHand = function () {
+h.geldVragen.treeKeyHand = function () {
 	allHand(50);	
 }
 
-h.geldVragen.fiveKeyHand = function () {
+h.geldVragen.fourKeyHand = function () {
 	loadView("customBedrag");	
+}
+
+h.geldVragen.fiveKeyHand = function () {
+		
 }
 
 h.geldVragen.sixKeyHand = function () {
