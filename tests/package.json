@@ -1,0 +1,14 @@
+{
+  "name": "tiBan-test",
+  "version": "0.1.0",
+  "description": "test for testing the tiban apis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wouter van der plas",
+  "license": "ISC",
+  "dependencies": {
+    "sync-request": "^2.0.1"
+  }
+}
