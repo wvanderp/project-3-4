@@ -1,4 +1,5 @@
 var request = require("sync-request");
+var fs = require("fs");
 
 var ips = {
 			0:{
@@ -50,6 +51,58 @@ var ips = {
 			continue;
 		}
 		hosts.report.ping = true;
+
+		//testing the login endpoint
+		login(hosts)
+
+		//testing the balance endpoint
+		balance(hosts)
+
+		//testing the withdraw endpoint
+		withdraw(hosts)
+
+		//testing the logout endpoint
+		logout(hosts)
+
+
 	};
 
+//write file to comandline and file
 console.log(ips);
+fs.writeFileSync("./data.json", JSON.stringify(ips), 'utf-8');
+
+function login (hosts) {
+	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var report = hosts.report;
+	var test404 = request('POST', base+"login");
+	if(test404.statusCode !== 200){
+		report.login = false;
+	}
+}
+
+function balance (hosts) {
+	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var report = hosts.report;
+	var test404 = request('POST', base+"balance");
+	if(test404.statusCode !== 200){
+		report.balance = false;
+	}
+}
+
+function withdraw (hosts) {
+	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var report = hosts.report;
+	var test404 = request('POST', base+"withdraw");
+	if(test404.statusCode !== 200){
+		report.withdraw = false;
+	}
+}
+
+function logout (hosts) {
+	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var report = hosts.report;
+	var test404 = request('POST', base+"logout");
+	if(test404.statusCode !== 200){
+		report.logout = false;
+	}
+}
