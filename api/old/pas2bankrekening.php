@@ -1,38 +1,42 @@
 <?php
-	//deze end point zet een pas nummer om in een rekening nummer.
-	include("utils.php");
-	require_once 'errorGen.php';
+        //deze end point zet een pas nummer om in een rekening nummer.
+        include("utils.php");
+        require_once 'errorGen.php';
 
-	//zeker weten dat rekening_nr is ingevult
-	if(!isset($_GET["pasNr"])){
+        //zeker weten dat rekening_nr is ingevult
+        if(!isset($_GET["pasNr"])){
                 $message = "pasnummer not found";
                 echo json_encode(array("error" => $message));
-		die("no rekening_nr found");
-	}
+                die("no rekening_nr found");
+        }
 
-	// if (!is_numeric($_GET["pasNr"])) {
+        // if (!is_numeric($_GET["pasNr"])) {
  //                $message = "rekening not legit";
  //                echo json_encode(array("error" => $message));
-	// 	die("pas nummer is not a number");
-	// }
+        //      die("pas nummer is not a number");
+        // }
 
-	$link=mysqli_connect("localhost","root","skere","SkereDB");
-	// $link=mysqli_connect("localhost","root","","SkereDB");
+        $link=mysqli_connect("localhost","root","skere","SkereDB");
+        // $link=mysqli_connect("localhost","root","","SkereDB");
 
-	$pasNr = $_GET["pasNr"];
+        $pashouder = mysqli_query($link, "SELECT pashouder FROM `pas` WHERE `pas_id` = '".$pasNr."' LIMIT 1") or die(mysqli_error($link));
 
-	$pasNr = mysqli_real_escape_string($link, $pasNr);
+        $pashouder = mysqli_real_escape_string($link, $pashouder);
 
-	$result = mysqli_query($link, "SELECT rekening_nr FROM `pas` WHERE `pas_id` = '".$pasNr."' LIMIT 1") or die(mysqli_error($link));
+        $pasNr = $_GET["pasNr"];
 
-	if (mysqli_num_rows($result) == 0) {
-		$message = "rekening not found";
-		echo json_encode(array("error" => $message));
-		die("pas nr niet bekent");
-	}else{
-		$temp = mysqli_fetch_assoc($result);
+        $pasNr = mysqli_real_escape_string($link, $pasNr);
 
-		echo json_encode($temp["rekening_nr"]);
-	}
+        $result = mysqli_query($link, "SELECT rekening_nr FROM `pas` WHERE `pas_id` = '".$pasNr."' LIMIT 1") or die(mysqli_error($link));
+
+        if (mysqli_num_rows($result) == 0) {
+                $message = "rekening not found";
+                echo json_encode(array("error" => $message));
+                die("pas nr niet bekent");
+        }else{
+                $temp = mysqli_fetch_assoc($result);
+
+                echo json_encode($temp["rekening_nr"]);
+        }
 ?>
 
