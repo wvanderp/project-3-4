@@ -25,7 +25,7 @@
 		echo "<div id='host'>";
 		echo "<h1>".$host->name."</h1>";
 		if ($report->ping == false) {
-			echo "<p class='bad'>no ping resieved from server</p>";
+			echo "<p class='bad'>no pong received from server</p>";
 			continue;
 		}
 
