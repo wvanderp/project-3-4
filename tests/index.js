@@ -3,36 +3,42 @@ var fs = require("fs");
 
 var ips = {
 			0:{
+				"http": "http://",
 				"name": "ProjectHeist",
 				"ip": "145.24.222.156", 
 				"port": 80,
 				"end": "/"
 			},
 			1:{
+				"http": "http://",
 				"name": "illumiNatedGroup",
 				"ip": "145.24.222.103",
 				"port":  8080,
 				"end":  "/"
 			},
 			2:{
+				"http": "http://",
 				"name": "ATM bank",
 				"ip": "145.24.222.217",
 				"port":  8080,
 				"end":  "/"
 			},
 			3:{
+				"http": "http://",
 				"name": "Skerebank",
 				"ip": "hro.cwms.cc",
 				"port":  80,
 				"end":  "api/"
 			},
 			4:{
+				"http": "https://",
 				"name": "MLB INC.",
 				"ip": "145.24.222.177",
 				"port":  443,
 				"end":  "/"
 			},
 			5:{
+				"http": "http://",
 				"name": "Bank CorruptCo.",
 				"ip": "145.24.222.150",
 				"port":  80,
@@ -45,7 +51,7 @@ var ips = {
 		hosts = ips[i];
 		hosts.report = {};
 		try{
-			var res = request('POST', "http://"+hosts.ip+":"+hosts.port+hosts.end);
+			var res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
 		}catch(err){
 			hosts.report.ping = false;
 			continue;
@@ -72,7 +78,7 @@ console.log(ips);
 fs.writeFileSync("./data.json", JSON.stringify(ips), 'utf-8');
 
 function login (hosts) {
-	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
 	var test404 = request('POST', base+"login");
 	if(test404.statusCode !== 200){
@@ -81,7 +87,7 @@ function login (hosts) {
 }
 
 function balance (hosts) {
-	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
 	var test404 = request('POST', base+"balance");
 	if(test404.statusCode !== 200){
@@ -90,7 +96,7 @@ function balance (hosts) {
 }
 
 function withdraw (hosts) {
-	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
 	var test404 = request('POST', base+"withdraw");
 	if(test404.statusCode !== 200){
@@ -99,7 +105,7 @@ function withdraw (hosts) {
 }
 
 function logout (hosts) {
-	var base = "http://"+hosts.ip+":"+hosts.port+hosts.end;
+	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
 	var test404 = request('POST', base+"logout");
 	if(test404.statusCode !== 200){
