@@ -51,7 +51,15 @@ var ips = {
 		hosts = ips[i];
 		hosts.report = {};
 		try{
-			var res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
+			var res;
+			if(hosts.port != 80 && hosts.port != 443) {
+			  console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
+			  res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
+			}
+                        else {
+			  console.log('POST', hosts.http+hosts.ip+hosts.end);
+			  res = request('POST', hosts.http+hosts.ip+hosts.end);
+			}
 		}catch(err){
 			hosts.report.ping = false;
 			continue;
