@@ -15,10 +15,12 @@ var serialPort = new SerialPort(port , {
 });
 
 
-serialPort.on("open", function () {
-	console.log('open serial port');
-	io.on("connect", function() {
-		console.log('open socket port');
+
+io.on("connect", function(socket) {
+	
+	console.log('open socket port');
+	serialPort.on("open", function () {
+		console.log('open serial port');
 		serialPort.on('data', function(data) {
 			result = data.trim();
 			// console.log(result.substring(0,4));
@@ -38,6 +40,26 @@ serialPort.on("open", function () {
 			console.log("Serial Error: "+err);
 		});
 	});
+	
+	socket.on("print", function (text){
+		console.log("bon word geprint");
+
+
+		// var print = 'CutePDF Writer'; //for test purpusus
+		var print = 'DYMO LabelWriter 400'; // for some real printing
+
+		// console.log("installed printers:\n"+util.inspect(printer.getPrinters(), {colors:true, depth:10}));
+
+
+		printer.printDirect({data: print // or simple String: "some text"
+			, printer: print // printer name, if missing then will print to default printer
+			, type: 'TEXT' // type: RAW, TEXT, PDF, JPEG, .. depends on platform
+			, success:function(jobID){
+				console.log("sent to printer with ID: "+jobID);
+			}
+			, error:function(err){console.log(err);}
+		});
+	})
 	// io.on('disconnect', function () {
 	// 	console.log('disconnect client event....');
 	// 	// io.reconnect();
