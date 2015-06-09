@@ -5,8 +5,6 @@
 
         $cardId = $_GET["cardId"];
 
-        $query = "SELECT `pas_id` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
-
         $query = "SELECT `pas_id` FROM `pas` WHERE `pas_id` = ".$pasnr." LIMIT 1";
         mysqli_query($link, $query);
 
@@ -17,7 +15,10 @@
 
         if ($cardId == $query && $pin == $query2){
                 $succes = 1234;
-                mysqli_query($link, "UPDATE `pas` SET `failedattempts` = 0 WHERE `pas_id` = '".$cardId."' LIMIT 1") or die(mysqli_error($link));
+                mysqli_query($link, "UPDATE `validatie` SET `validatieToken` = '".$succes."' WHERE `pas_id` = '".$cardId."' LIMIT 1") or die(mysqli_error($link));
+
+		mysqli_query($link, "UPDATE `pas` SET `failedattempts` = 0 WHERE `pas_id` = '".$cardId."' LIMIT 1") or die(mysqli_error($link));
+
 
         if ($pasnr == $query && $pin == $query2){
                 $token = md5(time());
