@@ -21,9 +21,6 @@ function getPaid(){
 }
 
 function style () {
-	if(saldo < 5){
-		$(".moneyImg:eq(0)").attr("src", "images/5EuroGray.png");
-	}
 	if(saldo < 10){
 		$(".moneyImg:eq(2)").attr("src", "images/10EuroGray.png");
 	}
@@ -32,15 +29,6 @@ function style () {
 	}
 	if(saldo < 50){
 		$(".moneyImg:eq(6)").attr("src", "images/50EuroGray.png");
-	}
-	if(saldo < 100){
-		$(".moneyImg:eq(1)").attr("src", "images/100EuroGray.png");
-	}
-	if(saldo < 200){
-		$(".moneyImg:eq(3)").attr("src", "images/200EuroGray.png");
-	}
-	if(saldo < 500){
-		$(".moneyImg:eq(5)").attr("src", "images/500EuroGray.png");
 	}
 }
 
