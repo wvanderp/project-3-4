@@ -1,3 +1,6 @@
+#dont include the blog in the git
+/blog/*
+
 #php save files
 *.php.save
 *.save.*
