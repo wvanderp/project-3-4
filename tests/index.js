@@ -28,7 +28,7 @@ var ips = {
 				"name": "Skerebank",
 				"ip": "hro.cwms.cc",
 				"port":  80,
-				"end":  "api/"
+				"end":  "/api/"
 			},
 			4:{
 				"http": "https://",
@@ -53,12 +53,12 @@ var ips = {
 		try{
 			var res;
 			if(hosts.port != 80 && hosts.port != 443) {
-			  console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
-			  res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
+				console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
+				res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
 			}
-                        else {
-			  console.log('POST', hosts.http+hosts.ip+hosts.end);
-			  res = request('POST', hosts.http+hosts.ip+hosts.end);
+			else {
+				console.log('POST', hosts.http+hosts.ip+hosts.end);
+				res = request('POST', hosts.http+hosts.ip+hosts.end);
 			}
 		}catch(err){
 			hosts.report.ping = false;
@@ -91,6 +91,8 @@ function login (hosts) {
 	var test404 = request('POST', base+"login");
 	if(test404.statusCode !== 200){
 		report.login = false;
+	}else{
+		report.login = {};
 	}
 }
 
@@ -100,6 +102,8 @@ function balance (hosts) {
 	var test404 = request('POST', base+"balance");
 	if(test404.statusCode !== 200){
 		report.balance = false;
+	}else{
+		report.balance = {};
 	}
 }
 
@@ -109,6 +113,8 @@ function withdraw (hosts) {
 	var test404 = request('POST', base+"withdraw");
 	if(test404.statusCode !== 200){
 		report.withdraw = false;
+	}else{
+		report.withdraw = {};
 	}
 }
 
@@ -118,5 +124,7 @@ function logout (hosts) {
 	var test404 = request('POST', base+"logout");
 	if(test404.statusCode !== 200){
 		report.logout = false;
+	}else{
+		report.logout = {};
 	}
 }
