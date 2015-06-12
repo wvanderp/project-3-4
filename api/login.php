@@ -1,40 +1,68 @@
 <?php
-        $link = mysqli_connect("localhost","root","skere","SkereDB");
+		$link = mysqli_connect("localhost","root","skere","SkereDB");
 
-        $pin = $_GET["pin"];
+		$pin = $_GET["pin"];
+		$cardId = $_GET["cardId"];
 
-        $cardId = $_GET["cardId"];
+		$query = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
+		$failResp = mysqli_query($link, $query) or die(mysqli_error($link));
+		$failedattempts = mysqli_fetch_array($failResp)[0];
 
-        $query = "SELECT `pas_id` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
+		if ($failedattempts < 2) {
+			$responce = array(
+				"succes"=> array(),
+				"error" => array(
+					"code" => 16,
+					"message" => "pas geblokkeerd",
+					"failedAttempts" => $failedattempts
+				)
+			);
 
-        $query = "SELECT `pas_id` FROM `pas` WHERE `pas_id` = ".$pasnr." LIMIT 1";
-        mysqli_query($link, $query);
+			echo json_encode($responce);
+			die();
+		}
 
-        $query2 = "SELECT `pincode` FROM `pas` WHERE `pincode` = '".$pin."' LIMIT 1";
-        mysqli_query($link, $query2);
+		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
+		$resp = mysqli_query($link, $query) or die(mysqli_error($link));
+		$numRow = mysqli_num_rows($resp);
 
-        $failedattempts = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1") or die(mysqli_error($link));
+		if ($numRow == 0) {
+			$responce = array(
+				"succes"=> array(),
+				"error" => array(
+					"code" => 14,
+					"message" => "pas niet bekent",
+				)
+			);
 
-        if ($cardId == $query && $pin == $query2){
-                $succes = 1234;
-                mysqli_query($link, "UPDATE `pas` SET `failedattempts` = 0 WHERE `pas_id` = '".$cardId."' LIMIT 1") or die(mysqli_error($link));
+			echo json_encode($responce);
+			die();
+		}
 
-        if ($pasnr == $query && $pin == $query2){
-                $token = md5(time());
-                $responce = array(
-                        "sucsess" => array("token" => $token ),
-                        "error" => array()
-                )
+		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' AND `pincode` = ".$pincode." LIMIT 1";
+		$resp = mysqli_query($link, $query) or die(mysqli_error($link));
+		$numRow = mysqli_num_rows($resp);
 
-        }else {
-                $error = 201;
-                if($cardId == $query){
-                        $failedattempts = $failedattempts+1;
-                        mysqli_query($link, "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' LIMIT 1") or die(mysqli_error($link));
-                }
-        }
+		if ($numRow == 0) {
+			$responce = array(
+				"succes"=> array(),
+				"error" => array(
+					"code" => 15,
+					"message" => "pin niet bekent",
+				)
+			);
 
+			echo json_encode($responce);
+			die();
+		}
 
-        $json = json_encode($responce);
+		$token = md5(time());
+		$responce = array(
+			"sucsess" => array("token" => $token ),
+			"error" => array()
+		);
+
+		echo $responce;
+		die();
 ?>
 
