@@ -1,14 +1,21 @@
 <?php
+		error_reporting(E_ALL);
+		ini_set('display_errors', true);
+
 		$link = mysqli_connect("localhost","root","skere","SkereDB");
 
-		$pin = $_GET["pin"];
-		$cardId = $_GET["cardId"];
+		//$pin = $_GET["pin"];
+		//$cardId = $_GET["cardId"];
+
+		$pin = 1234;
+		$cardId = 1;
 
 		$query = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
 		$failResp = mysqli_query($link, $query) or die(mysqli_error($link));
-		$failedattempts = mysqli_fetch_array($failResp)[0];
+		$failedattempts = mysqli_fetch_array($failResp);
+		//var_dump($failedattempts[0]);
 
-		if ($failedattempts < 2) {
+		if ($failedattempts[0] > 2) {
 			$responce = array(
 				"succes"=> array(),
 				"error" => array(
@@ -40,7 +47,7 @@
 			die();
 		}
 
-		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' AND `pincode` = ".$pincode." LIMIT 1";
+		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' AND `pincode` = ".$pin." LIMIT 1";
 		$resp = mysqli_query($link, $query) or die(mysqli_error($link));
 		$numRow = mysqli_num_rows($resp);
 
@@ -63,7 +70,7 @@
 			"error" => array()
 		);
 
-		echo $responce;
+		echo json_encode($responce);
 		die();
 ?>
 
