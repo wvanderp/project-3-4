@@ -70,6 +70,9 @@
 			"error" => array()
 		);
 
+		$query = "INSERT INTO `SkereDB`.`tokens` (`token`, `date`, `pas`) VALUES ('".$token."', '".time()."', '".$cardId."');";
+		mysqli_query($link, $query) or die(mysqli_error($link));
+
 		echo json_encode($responce);
 		die();
 ?>
