@@ -51,15 +51,7 @@ var ips = {
 		hosts = ips[i];
 		hosts.report = {};
 		try{
-			var res;
-			if(hosts.port != 80 && hosts.port != 443) {
-				console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
-				res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end);
-			}
-			else {
-				console.log('POST', hosts.http+hosts.ip+hosts.end);
-				res = request('POST', hosts.http+hosts.ip+hosts.end);
-			}
+			wget(hosts, "")
 		}catch(err){
 			hosts.report.ping = false;
 			continue;
@@ -86,20 +78,28 @@ console.log(ips);
 fs.writeFileSync("./data.json", JSON.stringify(ips), 'utf-8');
 
 function login (hosts) {
-	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
-	var test404 = request('POST', base+"login");
+	//404
+	var test404 = wget(hosts, "login");
 	if(test404.statusCode !== 200){
 		report.login = false;
+		return
 	}else{
 		report.login = {};
 	}
+	// no pas nummer
+	var noPasReq = wget(hosts, "login", "pin=1234");
+	console.log(noPasReq);
+	//no pincode
+	var test404 = wget(hosts, "login");
+	//string to pas
+	var test404 = wget(hosts, "login");
+	//sting to pin
 }
 
 function balance (hosts) {
-	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
-	var test404 = request('POST', base+"balance");
+	var test404 = wget(hosts, "balance");
 	if(test404.statusCode !== 200){
 		report.balance = false;
 	}else{
@@ -108,9 +108,8 @@ function balance (hosts) {
 }
 
 function withdraw (hosts) {
-	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
-	var test404 = request('POST', base+"withdraw");
+	var test404 = wget(hosts, "withdraw");
 	if(test404.statusCode !== 200){
 		report.withdraw = false;
 	}else{
@@ -119,12 +118,34 @@ function withdraw (hosts) {
 }
 
 function logout (hosts) {
-	var base = hosts.http+hosts.ip+":"+hosts.port+hosts.end;
 	var report = hosts.report;
-	var test404 = request('POST', base+"logout");
+	var test404 = wget(hosts, "logout");
 	if(test404.statusCode !== 200){
 		report.logout = false;
 	}else{
 		report.logout = {};
 	}
+}
+
+function wget(hosts, url, post){
+
+	var res;
+	if (typeof post !== 'undefined') {
+		if(hosts.port != 80 && hosts.port != 443) {
+			console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end+url, post);
+			res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end+url, {"body": post});
+		}else {
+			console.log('POST', hosts.http+hosts.ip+hosts.end+url, post);
+			res = request('POST', hosts.http+hosts.ip+hosts.end+url, {"body": post});
+		}
+	}else{
+		if(hosts.port != 80 && hosts.port != 443) {
+			console.log('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end+url);
+			res = request('POST', hosts.http+hosts.ip+":"+hosts.port+hosts.end+url);
+		}else {
+			console.log('POST', hosts.http+hosts.ip+hosts.end+url);
+			res = request('POST', hosts.http+hosts.ip+hosts.end+url);
+		}
+	}
+	return res;
 }
