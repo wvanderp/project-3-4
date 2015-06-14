@@ -1,83 +1,48 @@
-var apiUrl = "http://hro.cwms.cc/api/old/";
+var token = null;
 
-function CheckPinCode (pasNr, pinCode) {
-	var result = null;
-	console.log(apiUrl+"CheckPinCode.php?pasNr="+pasNr+"&pinCode="+pinCode);
+function login (pasNr, pin) {
+	var bank = pasNr.substring(0,3);
+
+	var ips = {
+			"proh":{
+				"name": "ProjectHeist",
+				"ip": "http://145.24.222.156/"
+			},
+			"ilmg":{
+				"name": "illumiNatedGroup",
+				"ip": "http://145.24.222.103:8080/"
+			},
+			"atmb":{
+				"name": "ATM bank",
+				"ip": "http://145.24.222.217:8080/"
+			},
+			"sker":{
+				"name": "Skerebank",
+				"ip": "http://hro.cwms.cc/api/",
+			},
+			"mlbi":{
+				"name": "MLB INC.",
+				"ip": "https://145.24.222.177/"
+			},
+			"copo":{
+				"name": "Bank CorruptCo.",
+				"ip": "http://145.24.222.150/"
+			}
+		};
+
 	$.ajax({
-		url: apiUrl+"CheckPinCode.php",
-		data: {"pasNr": pasNr, "pinCode": pinCode},
+		url: ips[bank]+"login",
+		data: {"pasNr": pasNr, "pin": pin},
 		success: function (data) {
-			console.log(data);
-			// console.log("url data: "+data)
-			result = data;
+			if(data.error === {}){
+				data.success.token = token;
+			}else{
+				console.log(data.error)
+			}
 		},
+		method: "POST",
 		async: false,
 		dataType: "json"
 	});
-	return result;
-}
 
-function pas2bankrekening (pasNr) {
-	var result = null;
-	console.log(apiUrl+"pas2bankrekening.php?pasNr="+pasNr);
-	$.ajax({
-		url: apiUrl+"pas2bankrekening.php",
-		data: {"pasNr": pasNr},
-		success: function (data) {
-			console.log(data);
-			// console.log("url data: "+data)
-			result = data;
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			console.log(xhr.status);
-			console.log(xhr.responseText);
-		},
-		async: false,
-		dataType: "json"
-	});
-	return result;
-}
-
-function getSaldo (bankRekeningNummer) {
-	var result = null;
-	console.log(apiUrl+"saldo.php?rekening_nr="+bankRekeningNummer);
-	$.ajax({
-		url: apiUrl+"saldo.php",
-		data: {"rekening_nr": bankRekeningNummer},
-		success: function (data) {
-			console.log(data);
-			// console.log("url data: "+data)
-			result = data;
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			console.log(xhr.status);
-			console.log(xhr.responseText);
-		},
-		async: false,
-		dataType: "json"
-	});
-	return result;
-}
-
-function transactie (bankRekeningNummer, amount) {
-	var result = null;
-	console.log(apiUrl+"getmonney.php?rekening_nr="+bankRekeningNummer+"&amount="+amount);
-	$.ajax({
-		url: apiUrl+"getmonney.php",
-		data: {"rekening_nr": bankRekeningNummer,
-				"amount" : amount
-		},
-		success: function (data) {
-			console.log(data);
-			// console.log("url data: "+data)
-			result = data;
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			console.log(xhr.status);
-			console.log(xhr.responseText);
-		},
-		async: false,
-		dataType: "json"
-	});
-	return result;
 }
