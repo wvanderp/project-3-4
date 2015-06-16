@@ -1,7 +1,37 @@
 <?php
-$link = mysqli_connect("localhost","root","skere","SkereDB");
+	error_reporting(E_ALL);
+	ini_set('display_errors', true);
 
-$token = 132;
-$query = "SELECT `validatieToken` FROM `validatie` WHERE `validatieToken` = ".$token." LIMIT 1 ";
+	//$token = $_HEADER["token"];
+	$token = $_GET["token"];
+	$link = mysqli_connect("localhost","root","skere","SkereDB");
 
+	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1 ";
+	$resp = mysqli_query($link, $query) or die(mysqli_error($link));
+	$numRow = mysqli_num_rows($resp);
+	$query2 = "SELECT pas FROM `tokens` WHERE `token` = '".$token."' LIMIT 1 ";
+
+
+	if($numRow == 0) {
+		$responce = array(
+			"success" => array(),
+			"error" => array(
+				"code" => 4,
+				"message" => "auth token niet in db",
+			)
+		);
+		e($responce);
+		die();
+	}
+
+	$query = "SELECT `saldo` FROM `rekening` WHERE `pas` = '".$query2."' LIMIT 1"; 
+	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
+
+	if ($balance!=null){
+		$responce = array(
+			"success" => array("balance" => $balance),
+			"error" => array()
+		);
+	}
+}
 ?>
