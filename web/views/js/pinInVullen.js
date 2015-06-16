@@ -25,6 +25,22 @@ function allHand(num){
 
 		//submit function
 		// console.log(CheckPinCode(pasNr, pin));
+		// var login = CheckPinCode(pasNr, pin);
+		// if (login == -1) {
+		// 	console.log("corect");
+		// 	console.log("pin was: "+pin);
+		// 	atempts = 0;
+		// 	loadView("mainMenu");
+		// }else{
+		// 	console.log("incorect")
+		// 	console.log("pin was: "+pin);
+		// 	atempts++;
+		// 	if (atempts < 3) {
+		// 		loadPinVragenMsg("pinInVullen");
+		// 	}else{
+		// 		loadView("pincodeFout");
+		// 	};
+		// }
 		var good = CheckPinCode(pasNr, pin);
 		if (good) {
 			console.log("corect");

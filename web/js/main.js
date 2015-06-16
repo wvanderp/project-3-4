@@ -13,7 +13,8 @@ var h = {};
 
 
 $(document).ready(function () {
-	loadView("mainMenu");
-	// loadView("startMenu");
+	// printBon();
+	// loadView("mainMenu");
+	loadView("startMenu");
 	// loadCard(1);
 });

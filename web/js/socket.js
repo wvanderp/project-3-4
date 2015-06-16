@@ -21,6 +21,11 @@ io.on("connect", function (socket) {
 			loadCard(card);
 		}
 	})
+
+	function emintbon(text){
+		console.log("emmiting shit");
+		io.emit("print", text);
+	}
 });
 
 

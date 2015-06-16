@@ -1,4 +1,5 @@
 var token = null;
+var bank = null;
 
 function login (pasNr, pin) {
 	var bank = pasNr.substring(0,3);
@@ -30,14 +31,19 @@ function login (pasNr, pin) {
 			}
 		};
 
+
+	var ret = 0;
 	$.ajax({
 		url: ips[bank]+"login",
 		data: {"pasNr": pasNr, "pin": pin},
 		success: function (data) {
 			if(data.error === {}){
-				data.success.token = token;
+				token = data.success.token;
+				bank =  ips[bank];
+				ret = -1
 			}else{
 				console.log(data.error)
+				res = data.error.code;
 			}
 		},
 		method: "POST",
@@ -45,4 +51,5 @@ function login (pasNr, pin) {
 		dataType: "json"
 	});
 
+	return ret;
 }
