@@ -29,10 +29,10 @@ h.biljetKeuze.nineKeyHand = function (){
 	
 }
 h.biljetKeuze.aKeyHand = function (){
-	loadView("saldoVragen");
+	
 }
 h.biljetKeuze.bKeyHand = function (){
-	loadView("geldVragen");
+
 }
 h.biljetKeuze.cKeyHand = function (){
 	
@@ -44,5 +44,5 @@ h.biljetKeuze.hashKeyHand = function (){
 	
 }
 h.biljetKeuze.starKeyHand = function (){
-	resetAll();
+	
 }
