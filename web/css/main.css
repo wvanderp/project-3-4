@@ -39,12 +39,8 @@ li b{
 }
 
 .customMoney{
-	background-color: gray;
-	width: 100px;
-	height: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 200%;
+	color: gray;
+	font-size: 150%;
 	text-align: center;
 }
 
