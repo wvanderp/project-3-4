@@ -17,7 +17,7 @@ function allHand (numer) {
 function getPaid(){
 	console.log("get paid")
 	transactie(bankrekening, amount)
-	loadView("bonVragen");
+	loadView("biljetKeuze");
 }
 
 function style () {

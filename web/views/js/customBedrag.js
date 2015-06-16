@@ -35,7 +35,7 @@ h.saldoVragen.bKeyHand = function (){
 	
 }
 h.saldoVragen.cKeyHand = function (){
-	loadView("bonVragen");
+	loadView("biljetKeuze");
 }
 h.saldoVragen.dKeyHand = function (){
 	
