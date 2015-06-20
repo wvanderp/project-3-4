@@ -1,4 +1,4 @@
-var io = require("socket.io")(1234);
+var io = require("socket.io-client")('http://localhost:1234');
 
 var last = null;
 var intervalId = null;
@@ -21,11 +21,6 @@ io.on("connect", function (socket) {
 			loadCard(card);
 		}
 	})
-
-	function emintbon(text){
-		console.log("emmiting shit");
-		io.emit("print", text);
-	}
 });
 
 

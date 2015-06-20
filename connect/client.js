@@ -1,7 +1,9 @@
 
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
-var io = require("socket.io-client")('http://localhost:1234');
+
+var io = require("socket.io")(1234);
+
 
 var port = "COM8";
 

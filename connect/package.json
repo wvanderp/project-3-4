@@ -4,6 +4,6 @@
 
 	"dependencies": {
 		"serialport": "*",
-		"socket.io-client": "*"
+		"socket.io": "*"
 	}
 }

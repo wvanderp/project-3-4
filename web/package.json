@@ -9,7 +9,7 @@
 
 	"dependencies": {
 		"node-printer": "*",
-		"socket.io": "*"
+		"socket.io-client": "*"
 	},
 
 	"webkit": {
