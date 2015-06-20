@@ -5,12 +5,14 @@
 	//$token = $_HEADER["token"];
 	$token = $_GET["token"];
 	$link = mysqli_connect("localhost","root","skere","SkereDB");
-	$query = "SELECT `pas` FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
-	$pas = mysqli_query($link, $query) or die(mysqli_error($link));
+
+	$pas = $_GET["pas"];
+	//pas moet uit de db komen
 
 	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
 	$resp = mysqli_query($link, $query) or die(mysqli_error($link));
 	$numRow = mysqli_num_rows($resp);
+	// mysql object omzetten -> mysqli_fetch_accoc()
 
 
 	if($numRow == 0) {
