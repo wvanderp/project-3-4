@@ -7,8 +7,8 @@
         //$cardId = $_GET["cardId"];
         //$token = $_GET["token"];
         //$amount = $_GET["amount"];
-	$cardId = 1;
-	$token = 005971f6a02808c02c7d02fb4dc87903;
+	$cardId = "1";
+	$token = "005971f6a02808c02c7d02fb4dc87903";
 	$amount = 1;
 
         $query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
@@ -31,7 +31,7 @@
 
 	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."') LIMIT 1";
 	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
-	$saldo=$balance-$amount
+	$saldo = $balance-$amount
 
 	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."')";
         mysqli_query($link, $query) or die(mysqli_error($link));
