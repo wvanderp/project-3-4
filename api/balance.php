@@ -5,11 +5,11 @@
 	//$token = $_HEADER["token"];
 	$token = $_GET["token"];
 	$link = mysqli_connect("localhost","root","skere","SkereDB");
+	$pas = $_GET["pas"];
 
-	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1 ";
+	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
 	$resp = mysqli_query($link, $query) or die(mysqli_error($link));
 	$numRow = mysqli_num_rows($resp);
-	$query2 = "SELECT pas FROM `tokens` WHERE `token` = '".$token."' LIMIT 1 ";
 
 
 	if($numRow == 0) {
@@ -24,7 +24,7 @@
 		die();
 	}
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `pas` = '".$query2."' LIMIT 1"; 
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT rekening_nr FROM pas WHERE pas_id= '".$pas."' LIMIT 1"; 
 	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
 
 	if ($balance!=null){
@@ -33,5 +33,4 @@
 			"error" => array()
 		);
 	}
-}
 ?>

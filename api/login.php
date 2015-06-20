@@ -1,10 +1,10 @@
 <?php
 		error_reporting(E_ALL);
 		ini_set('display_errors', true);
-		
+
 		$link = mysqli_connect("localhost","root","skere","SkereDB");
-		
-		
+
+
 		//$pin = $_GET["pin"];
 		//$cardId = $_GET["cardId"];
 
