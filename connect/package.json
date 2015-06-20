@@ -4,6 +4,7 @@
 
 	"dependencies": {
 		"serialport": "*",
-		"socket.io": "*"
+		"socket.io": "*",
+		"printer": "*"
 	}
 }

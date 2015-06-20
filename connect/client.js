@@ -4,6 +4,8 @@ var SerialPort = serialport.SerialPort;
 
 var io = require("socket.io")(1234);
 
+var printer = require("printer");
+
 
 var port = "COM8";
 
@@ -28,13 +30,13 @@ io.on("connect", function(socket) {
 	// 		// console.log(result.substring(0,4));
 	// 		if (result.substring(0,5) == "Card:") {
 	// 			console.log(result.substring(6)+" card found");
-	// 			io.emit("card", result.substring(6));
+	// 			socket.emit("card", result.substring(6));
 	// 			// loadCard(result);
 	// 		}else if(result.substring(0,4) == "Scan"){
 	// 			console.log(result);
 	// 		}else{
 	// 			console.log("keypad: '"+result+"'");
-	// 			io.emit("keystroke", result);
+	// 			socket.emit("keystroke", result);
 	// 		}
 	// 	});
 
@@ -43,7 +45,7 @@ io.on("connect", function(socket) {
 	// 	});
 	// });
 	
-	io.on("print", function (text){
+	socket.on("print", function (text){
 		console.log("bon word geprint - client");
 
 
