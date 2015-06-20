@@ -20,7 +20,7 @@
 				"message" => "auth token niet in db",
 			)
 		);
-		e($responce);
+		echo($responce);
 		die();
 	}
 
