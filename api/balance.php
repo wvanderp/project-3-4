@@ -6,11 +6,12 @@
 	$token = $_GET["token"];
 	$link = mysqli_connect("localhost","root","skere","SkereDB");
 
-	$pas = $_GET["pas"];
-	//pas moet uit de db komen
+	$query = "SELECT `pas` FROM `tokens` WHERE `token` = '".$token."' LIMIT 1"; 
+	$cardId = mysqli_query($link, $query) or die(mysqli_error($link));
 
 	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
-	$resp = mysqli_query($link, $query) or die(mysqli_error($link));
+	$temp = mysqli_query($link, $query) or die(mysqli_error($link));
+	$resp = mysqli_fetch_accoc($temp);
 	$numRow = mysqli_num_rows($resp);
 	// mysql object omzetten -> mysqli_fetch_accoc()
 
@@ -27,7 +28,7 @@
 		die();
 	}
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT rekening_nr FROM pas WHERE pas_id= '".$pas."' LIMIT 1"; 
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT rekening_nr FROM pas WHERE pas_id= '".$cardId."' LIMIT 1"; 
 	$temp = mysqli_query($link, $query) or die(mysqli_error($link));
 	$balance = mysqli_fetch_array($temp);
 	$balance = $balance[0];
@@ -45,6 +46,6 @@
 				"message" => "fout 201 = ???",
 			)
 		);
-
+	}
 
 ?>

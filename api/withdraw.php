@@ -7,8 +7,9 @@
         //$cardId = $_GET["cardId"];
         //$token = $_GET["token"];
         //$amount = $_GET["amount"];
+	$query = "SELECT `pas` FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
+        $cardId = mysqli_query($link, $query) or die(mysqli_error($link));
 
-	$cardId = 1;
 	$token = "005971f6a02808c02c7d02fb4dc87903";
 	$amount = 1;
 
@@ -27,15 +28,17 @@
                         )
                 );
 
-				echo json_encode($responce);
+		echo json_encode($responce);
                 die();
         }
 
 	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."') LIMIT 1";
 	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
-
+	$saldo = $balance-$amount
 	// mysql object omzetten -> mysqli_fetch_accoc()
-	$saldo=$balance-$amount
+	mysqli_fetch_accoc($saldo);
+
+
 
 	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."')";
     mysqli_query($link, $query) or die(mysqli_error($link));
@@ -62,7 +65,7 @@
 			"success" => array(),
 			"error" => array(
 				"code" => 201,
-				"message" => "?saldo niet bekend?",
+				"message" => "saldo niet bekend",
 			)
 		);
 		echo json_encode($responce);
