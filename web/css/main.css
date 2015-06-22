@@ -8,6 +8,28 @@ body{
 }
 
 
+#pinholder{
+margin: 0 auto;
+width: 220px;
+
+
+}
+
+.money table td:nth-child(3) {
+    	width: 100px;
+	  text-align: right;
+	  right: 0;
+	  position: absolute;
+} 
+
+.money table td:nth-child(4) {
+	  position: absolute;
+	  right: 110px;
+	  vertical-align: middle;
+	  height: 50px;
+	  margin-top: 23px;
+}
+
 .pinField{
 	background-color: #6464FF;
 	width: 50px;
