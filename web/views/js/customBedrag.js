@@ -1,4 +1,4 @@
-$("#wrongCustomBox").text("Het gekozen bedrag is hoger dan €500,- <br> Kies een lager bedrag");
+$("#wrongCustomBox").text("Het gekozen bedrag is hoger dan €500,-. Kies een lager bedrag");
 
 h.saldoVragen.zeroKeyHand = function (){
 	allHand(0);
