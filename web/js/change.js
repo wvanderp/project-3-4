@@ -12,5 +12,9 @@ function loadGeldVraagMsg (msg) {
 function loadPinVragenMsg () {
 	//laad hel pin invullen view en voegt er dan een bericht aan de view.
 	loadView("pinInVullen");
-	$("#errorbox").html("U heeft uw pincode verkeerd ingevuld.<br> Poging "+atempts);
+	$("#errorbox").html("U heeft uw pincode verkeerd ingevuld.<br> Herpoging "+atempts);
+}
+
+function loadCustomMoneyMsg(){
+	$)("wrongCustomBox").text("Het gekozen bedrag is hoger dan €500,- <br> Kies een lager bedrag")
 }

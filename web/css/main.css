@@ -50,6 +50,10 @@ width: 220px;
 	color: red;
 }
 
+#wrongCustomBox{
+	color: red;
+}
+
 li{
 	list-style-type: none;
 	margin-left: auto;
