@@ -4,21 +4,20 @@ import lejos.nxt.*;
 public class Lego {
     
     public static void main(String[] args) {
-    	
-    	int bedrag = 230;    	
+  
+int bedrag = 50;
     	int tijdelijk;
     	
     	int motora =9;
     	int motorb =19;
     	int motorc = 49;
     	
-    	boolean groot=false;
-    	boolean normaal=false;
-    	boolean klein=false;
+    	int groot=1;
+    	int normaal=0;
+    	int klein=0;
     	//normaal biljetten
-    	if(groot==true)
-    	{
-    		while(bedrag >0)
+    	if(groot==1){
+    		while(bedrag>0)
     	{
     		while(bedrag>motorc)
     		{
@@ -65,10 +64,9 @@ public class Lego {
     		System.out.println("bedrag is kleiner als 10");
     		break;
     	}
-    	}
-    	
+    	}   	
     	//als je meer twintigjes wilt
-    	if(normaal==true)
+    	if(normaal==1)
     	{
     		while(bedrag >0)
         	{
@@ -119,7 +117,7 @@ public class Lego {
         	}
     	}
     	
-    	 if(klein ==true)
+    	 if(klein ==1)
     	 {
     		 while(bedrag >0)
          	{

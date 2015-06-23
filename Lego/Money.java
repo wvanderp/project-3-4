@@ -1,18 +1,36 @@
-public static void printMoney(int ma, int mb, int mc) {
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Money{
+	public static void main(String[] args) {
+	int ma=50;
+	int mb=0;
+	int mc=1;
+	int md=0;
+		
+		
 		//Setting java files process:
 		ArrayList<String> lines = new ArrayList<String>();
 		String line = null;
 		try {
-            File f1 = new File("./Lejos.java");
+            File f1 = new File("./Lego.java");
             FileReader fr = new FileReader(f1);
             BufferedReader br = new BufferedReader(fr);
             while ((line = br.readLine()) != null) {
-                if (line.contains("int dispenserA"))
-                    line = "int dispenserA = " + ma + ";";
-                else if(line.contains("int dispenserB"))
-                	line = "int dispenserB = " + mb + ";";
-                else if(line.contains("int dispenserC"))
-                	line = "int dispenserC = " + mc + ";";
+                if (line.contains("int bedrag"))
+                    line = "int bedrag = " + ma + ";";
+                else if(line.contains("boolean groot"))
+                	line = "boolean groot = " + mb + ";";
+                else if(line.contains("boolean normaal"))
+                	line = "boolean klein = " + mc + ";";
+				else if(line.contains("int dispenserC"))
+                	line = "boolean klein = " + md + ";";
                 line = line + "\r\n";
                 lines.add(line);
             }
@@ -30,8 +48,7 @@ public static void printMoney(int ma, int mb, int mc) {
         }
 		
 		//Building process:
-		ProcessBuilder builder = new ProcessBuilder(
-	            "cmd.exe", "/c", "nxjc Lejos.java && nxj -r Lejos");
+		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "nxjc Lego.java && nxj -r Lego");
         builder.redirectErrorStream(true);
         try {
 	        Process p = builder.start();
@@ -44,6 +61,8 @@ public static void printMoney(int ma, int mb, int mc) {
         }
         catch(IOException ie) {
         	
-        	
-        }
-	}
+		}   	
+        
+	
+}
+}
