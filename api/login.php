@@ -5,11 +5,8 @@
 		$link = mysqli_connect("localhost","root","skere","SkereDB");
 
 
-		//$pin = $_GET["pin"];
-		//$cardId = $_GET["cardId"];
-
-		$pin = 1234;
-		$cardId = 1;
+		$pin = $_GET["pin"];
+		$cardId = $_GET["cardId"];
 
 		$query = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
 		$failResp = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -60,7 +57,9 @@
 					"message" => "pin niet bekent",
 				)
 			);
-
+			$failedattempts++;
+			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
+			mysqli_query($link, $query) or die(mysqli_error($link));
 			echo json_encode($responce);
 			die();
 		}

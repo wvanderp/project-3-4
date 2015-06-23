@@ -36,7 +36,7 @@
 	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
 	$saldo = $balance-$amount
 	// mysql object omzetten -> mysqli_fetch_accoc()
-	mysqli_fetch_accoc($saldo);
+	mysqli_fetch_assoc($saldo);
 
 
 
