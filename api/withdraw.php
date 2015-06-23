@@ -7,12 +7,13 @@
         //$cardId = $_GET["cardId"];
         //$token = $_GET["token"];
         //$amount = $_GET["amount"];
+	$token = "005971f6a02808c02c7d02fb4dc87903";
+        $amount = 1;
+
+
 	$query = "SELECT `pas` FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
         $cardId = mysqli_query($link, $query) or die(mysqli_error($link));
-
-	$token = "005971f6a02808c02c7d02fb4dc87903";
-	$amount = 1;
-
+	$cardIdarray = mysqli_fetch_assoc($cardId);
     $query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
     $resp = mysqli_query($link, $query) or die(mysqli_error($link));
     $numRow = mysqli_num_rows($resp);
@@ -32,26 +33,26 @@
                 die();
         }
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."') LIMIT 1";
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardIdarray['pas']."') LIMIT 1";
 	$balance = mysqli_query($link, $query) or die(mysqli_error($link));
-	$saldo = $balance-$amount
+	$balanceArray = mysqli_fetch_assoc($balance);
+	$saldo = $balanceArray['saldo']-$amount;
 	// mysql object omzetten -> mysqli_fetch_accoc()
-	mysqli_fetch_assoc($saldo);
 
 
 
-	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."')";
+	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardIdarray['pas']."')";
     mysqli_query($link, $query) or die(mysqli_error($link));
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardId."') LIMIT 1";
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardIdarray['pas']."') LIMIT 1";
     $balance = mysqli_query($link, $query) or die(mysqli_error($link));
 
     //wat wil je berijken met deze if statment
     //je wil namelijk altijd na het updateten een responce terug geven
-	if($saldo==$balance){
+	if($saldo==$balanceArray['saldo']){
 		$responce = array(
        	                "success" => array(
-							"code" => 1337,
+				"code" => 1337,
        	                 	"message" => "Saldo updated",
 						),
        	                "error" => array()

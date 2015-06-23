@@ -11,7 +11,7 @@
 
 	$query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
 	$temp = mysqli_query($link, $query) or die(mysqli_error($link));
-	$resp = mysqli_fetch_accoc($temp);
+	$resp = mysqli_fetch_assoc($temp);
 	$numRow = mysqli_num_rows($resp);
 	// mysql object omzetten -> mysqli_fetch_accoc()
 

@@ -62,6 +62,10 @@
 			mysqli_query($link, $query) or die(mysqli_error($link));
 			echo json_encode($responce);
 			die();
+		} else {
+			$failedattempts=0;
+			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
+                        mysqli_query($link, $query) or die(mysqli_error($link));
 		}
 
 		$token = md5(time()+microtime());
