@@ -78,7 +78,7 @@ window.onkeydown = function (e) {
 			break;
 		case 76: // key: L (for loading card) 
 				console.log("key: load");
-				loadCard(1);
+				loadCard("skere1");
 			break;
 	    default:
 	        
