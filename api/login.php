@@ -23,7 +23,7 @@
 				)
 			);
 
-			echo json_encode($responce);
+			echo json_encode($responce, JSON_FORCE_OBJECT);
 			die();
 		}
 
@@ -41,7 +41,7 @@
 			);
 
 
-			echo json_encode($responce);
+			echo json_encode($responce, JSON_FORCE_OBJECT);
 			die();
 		}
 
@@ -60,7 +60,7 @@
 			$failedattempts++;
 			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
 			mysqli_query($link, $query) or die(mysqli_error($link));
-			echo json_encode($responce);
+			echo json_encode($responce, JSON_FORCE_OBJECT);
 			die();
 		} else {
 			$failedattempts=0;
@@ -77,7 +77,7 @@
 		$query = "INSERT INTO `SkereDB`.`tokens` (`token`, `date`, `pas`) VALUES ('".$token."', '".time()."', '".$cardId."');";
 		mysqli_query($link, $query) or die(mysqli_error($link));
 
-		echo json_encode($responce);
+		echo json_encode($responce, JSON_FORCE_OBJECT);
 		die();
 
 ?>

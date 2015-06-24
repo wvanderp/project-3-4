@@ -26,7 +26,7 @@
                         )
                 );
                 //e($responce);
-                echo json_encode($responce);
+                echo json_encode($responce, JSON_FORCE_OBJECT);
                 die();
         }
 
@@ -42,7 +42,7 @@
                         "error" => array()
                 );
                 //e($responce);
-                echo json_encode($responce);
+                echo json_encode($responce, JSON_FORCE_OBJECT);
                 die();
         } else {
                 $responce = array(
@@ -52,7 +52,7 @@
                                 "message" => "?saldo niet bekend?",
                         )
                 );
-                echo json_encode($responce);
+                echo json_encode($responce, JSON_FORCE_OBJECT);
                 die();
         }
 
