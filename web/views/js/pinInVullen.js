@@ -23,40 +23,8 @@ function allHand(num){
 		//adding the last number to the pin
 		pin += num*pinFactor;
 
-		//submit function
-		// console.log(CheckPinCode(pasNr, pin));
-		// var login = CheckPinCode(pasNr, pin);
-		// if (login == -1) {
-		// 	console.log("corect");
-		// 	console.log("pin was: "+pin);
-		// 	atempts = 0;
-		// 	loadView("mainMenu");
-		// }else{
-		// 	console.log("incorect")
-		// 	console.log("pin was: "+pin);
-		// 	atempts++;
-		// 	if (atempts < 3) {
-		// 		loadPinVragenMsg("pinInVullen");
-		// 	}else{
-		// 		loadView("pincodeFout");
-		// 	};
-		// }
-		var good = CheckPinCode(pasNr, pin);
-		if (good) {
-			console.log("corect");
-			console.log("pin was: "+pin);
-			atempts = 0;
-			loadView("mainMenu");
-		}else{
-			console.log("incorect")
-			console.log("pin was: "+pin);
-			atempts++;
-			if (atempts < 3) {
-				loadPinVragenMsg("pinInVullen");
-			}else{
-				loadView("pincodeFout");
-			};
-		}
+		// console.log("trying to login");
+		login (pasNr, pin);
 	}
 }
 
@@ -119,6 +87,7 @@ h.pinInVullen.dKeyHand = function (){
 h.pinInVullen.hashKeyHand = function (){
 	
 }
-function starHand(){
+
+h.pinInVullen.starKeyHand = function (){
 	
 }

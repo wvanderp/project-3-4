@@ -1,55 +1,60 @@
 var token = null;
 var bank = null;
 
+var ips = {
+	"proh":{
+		"name": "ProjectHeist",
+		"ip": "http://145.24.222.156/"
+	},
+	"ilmg":{
+		"name": "illumiNatedGroup",
+		"ip": "http://145.24.222.103:8080/"
+	},
+	"atmb":{
+		"name": "ATM bank",
+		"ip": "http://145.24.222.217:8080/"
+	},
+	"sker":{
+		"name": "Skerebank",
+		"ip": "http://hro.cwms.cc/api/",
+	},
+	"mlbi":{
+		"name": "MLB INC.",
+		"ip": "https://145.24.222.177/"
+	},
+	"copo":{
+		"name": "Bank CorruptCo.",
+		"ip": "http://145.24.222.150/"
+	}
+};
+
 function login (pasNr, pin) {
-	var bank = pasNr.substring(0,3);
+	console.log("new login api");
+	var bank = pasNr.substring(0,4);
 
-	var ips = {
-			"proh":{
-				"name": "ProjectHeist",
-				"ip": "http://145.24.222.156/"
-			},
-			"ilmg":{
-				"name": "illumiNatedGroup",
-				"ip": "http://145.24.222.103:8080/"
-			},
-			"atmb":{
-				"name": "ATM bank",
-				"ip": "http://145.24.222.217:8080/"
-			},
-			"sker":{
-				"name": "Skerebank",
-				"ip": "http://hro.cwms.cc/api/",
-			},
-			"mlbi":{
-				"name": "MLB INC.",
-				"ip": "https://145.24.222.177/"
-			},
-			"copo":{
-				"name": "Bank CorruptCo.",
-				"ip": "http://145.24.222.150/"
-			}
-		};
+	console.log(bank+" selected");
 
-
-	var ret = 0;
 	$.ajax({
-		url: ips[bank]+"login",
+		url: ips[bank].ip+"login",
 		data: {"pasNr": pasNr, "pin": pin},
-		success: function (data) {
-			if(data.error === {}){
-				token = data.success.token;
-				bank =  ips[bank];
-				ret = -1
-			}else{
-				console.log(data.error)
-				res = data.error.code;
-			}
+		success: function (data){console.log("in ajax");loginHand(data);},
+		error: function( jqXHR, textStatus, errorThrown ){
+			console.log(textStatus);
 		},
 		method: "POST",
 		async: false,
 		dataType: "json"
 	});
+	console.log("after ajax");
+}
 
-	return ret;
+function loginHand(data){
+	console.log("login hand")
+	if(data.error === {}){
+		console.log("success")
+		token = data.success.token;
+		bank =  ips[bank];
+	}else{
+		console.log(data.error)
+	}
 }
