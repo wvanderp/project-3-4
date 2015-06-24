@@ -4,9 +4,40 @@
 
 		$link = mysqli_connect("localhost","root","skere","SkereDB");
 
+		if (isset($_POST["pin"])) {
+			$pin = $_POST["pin"];
+		}else{
+			$responce = array(
+				"success"=> array(),
+				"error" => array(
+					"code" => 10,
+					"message" => "pas niet ontvangen",
+					"failedAttempts" => $failedattempts
+				)
+			);
 
-		$pin = $_GET["pin"];
-		$cardId = $_GET["cardId"];
+			echo json_encode($responce, JSON_FORCE_OBJECT);
+			die();
+		}
+
+		if (isset($_POST["cardId"])) {
+			$cardId = $_POST["cardId"];
+			$cardId = substr($cardId, 4);
+			echo "$cardId";
+		}else{
+			$responce = array(
+				"success"=> array(),
+				"error" => array(
+					"code" => 10,
+					"message" => "pas niet ontvangen",
+					"failedAttempts" => $failedattempts
+				)
+			);
+
+			echo json_encode($responce, JSON_FORCE_OBJECT);
+			die();
+		}
+
 
 		$query = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
 		$failResp = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -65,7 +96,7 @@
 		} else {
 			$failedattempts=0;
 			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
-                        mysqli_query($link, $query) or die(mysqli_error($link));
+			mysqli_query($link, $query) or die(mysqli_error($link));
 		}
 
 		$token = md5(time()+microtime());
