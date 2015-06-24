@@ -10,10 +10,9 @@
 			$responce = array(
 				"success"=> array(),
 				"error" => array(
-					"code" => 10,
-					"message" => "pas niet ontvangen",
-					"failedAttempts" => $failedattempts
-				)
+					"code" => 11,
+					"message" => "pin niet ontvangen",
+					)
 			);
 
 			echo json_encode($responce, JSON_FORCE_OBJECT);
@@ -30,7 +29,6 @@
 				"error" => array(
 					"code" => 10,
 					"message" => "pas niet ontvangen",
-					"failedAttempts" => $failedattempts
 				)
 			);
 
