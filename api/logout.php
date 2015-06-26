@@ -5,13 +5,8 @@
         $link = mysqli_connect("localhost","root","skere","SkereDB");
 
         //$token = $_HEADER["token"];
-        //$cardId = $_GET["cardId"];
-        //$token = $_GET["token"];
-        //$amount = $_GET["amount"];
-
-        $cardId = 1;
         $token = "005971f6a02808c02c7d02fb4dc87903";
-        $amount = 1;
+        //needs a switch
 
         $query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
         $resp = mysqli_query($link, $query) or die(mysqli_error($link));
