@@ -38,7 +38,7 @@
 		}
 
 
-		$query = "SELECT `failedattempts` FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
+		$query = "SELECT `failedattempts` FROM `pas` WHERE `rekening_nr` = '".$cardId."' LIMIT 1";
 		$failResp = mysqli_query($link, $query) or die(mysqli_error($link));
 		$failedattempts = mysqli_fetch_array($failResp);
 		$failedattempts=$failedattempts[0];
@@ -57,7 +57,7 @@
 			die();
 		}
 
-		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' LIMIT 1";
+		$query = "SELECT * FROM `pas` WHERE `rekening_nr` = '".$cardId."' LIMIT 1";
 		$resp = mysqli_query($link, $query) or die(mysqli_error($link));
 		$numRow = mysqli_num_rows($resp);
 
@@ -75,7 +75,7 @@
 			die();
 		}
 
-		$query = "SELECT * FROM `pas` WHERE `pas_id` = '".$cardId."' AND `pincode` = ".$pin." LIMIT 1";
+		$query = "SELECT * FROM `pas` WHERE `rekening_nr` = '".$cardId."' AND `pincode` = ".$pin." LIMIT 1";
 		$resp = mysqli_query($link, $query) or die(mysqli_error($link));
 		$numRow = mysqli_num_rows($resp);
 
@@ -91,13 +91,13 @@
 				)
 			);
 			
-			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
+			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `rekening_nr` = ".$cardId." LIMIT 1";
 			mysqli_query($link, $query) or die(mysqli_error($link));
 			echo json_encode($responce, JSON_FORCE_OBJECT);
 			die();
 		} else {
 			$failedattempts=0;
-			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
+			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `rekening_nr` = ".$cardId." LIMIT 1";
 			mysqli_query($link, $query) or die(mysqli_error($link));
 		}
 
