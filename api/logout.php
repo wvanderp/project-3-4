@@ -20,7 +20,6 @@
         die();
         }
 
-
         $query = "SELECT * FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
         $resp = mysqli_query($link, $query) or die("1".mysqli_error($link));
         $numRow = mysqli_num_rows($resp);
