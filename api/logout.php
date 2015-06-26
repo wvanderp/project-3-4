@@ -45,6 +45,7 @@
                          ),
                         "error" => array()
                 );
+                
 		$query = "DELETE FROM `tokens` WHERE `token` = '".$token."' LIMIT 1";
 		mysqli_query($link, $query) or die("2".mysqli_error($link));
                 //e($responce);

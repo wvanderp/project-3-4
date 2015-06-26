@@ -56,14 +56,14 @@
     }
 
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardIdArray['pas']."') LIMIT 1"; 
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = '".$cardIdArray['pas']."' LIMIT 1"; 
 	$saldo = mysqli_query($link, $query) or die(mysqli_error($link));
 	$saldoArray = mysqli_fetch_assoc($saldo);
 
 	$saldo = $saldoArray['saldo'];
 	$saldo = $saldo - $amount;
 
-	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = (SELECT `rekening_nr` FROM `pas` WHERE `pas_id` = '".$cardIdArray['pas']."')";
+	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = '".$cardIdArray['pas']."'";
     mysqli_query($link, $query) or die(mysqli_error($link));
 
 	$responce = array(

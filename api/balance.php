@@ -41,7 +41,7 @@
 	$cardDbArray = mysqli_fetch_assoc($resp);
 	$cardId = $cardDbArray["pas"];
 
-	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = (SELECT rekening_nr FROM pas WHERE pas_id= '".$cardId."') LIMIT 1"; 
+	$query = "SELECT `saldo` FROM `rekening` WHERE `rekening_nr` = '".$cardId."' LIMIT 1"; 
 	$temp = mysqli_query($link, $query) or die("2 ".mysqli_error($link));
 	$balance = mysqli_fetch_array($temp);
 	$balance = $balance[0];
