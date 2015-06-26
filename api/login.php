@@ -6,6 +6,7 @@
 
 		if (isset($_POST["pin"])) {
 			$pin = $_POST["pin"];
+			//echo $pin;
 		}else{
 			$responce = array(
 				"success"=> array(),
@@ -22,7 +23,7 @@
 		if (isset($_POST["cardId"])) {
 			$cardId = $_POST["cardId"];
 			$cardId = substr($cardId, 4);
-			echo "$cardId";
+			//echo "$cardId";
 		}else{
 			$responce = array(
 				"success"=> array(),
@@ -79,14 +80,17 @@
 		$numRow = mysqli_num_rows($resp);
 
 		if ($numRow == 0) {
+			$failedattempts++;
+			
 			$responce = array(
 				"success"=> array(),
 				"error" => array(
 					"code" => 15,
 					"message" => "pin niet bekent",
+					"failedAttempts" => $failedattempts
 				)
 			);
-			$failedattempts++;
+			
 			$query = "UPDATE `pas` SET `failedattempts` = '".$failedattempts."' WHERE `pas_id` = ".$cardId." LIMIT 1";
 			mysqli_query($link, $query) or die(mysqli_error($link));
 			echo json_encode($responce, JSON_FORCE_OBJECT);
