@@ -28,3 +28,10 @@ function resetLast () {
 	last = null;
 	clearInterval(intervalId);	
 }
+
+function sendWithdrawReq(ammount, methode){
+	io.on("connect", function (socket) {
+		console.log("soccet connect inside sendWithdrawReq");
+		io.emit("WithdrawReq", {"ammount": ammount, "methode": methode});
+	});
+}

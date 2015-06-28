@@ -1,14 +1,22 @@
+h.biljetKeuze = {};
+
 h.biljetKeuze.zeroKeyHand = function (){
 	
 }
 h.biljetKeuze.oneKeyHand = function (){
-	
+	//minste biljetten
+	withdraw(amount);
+	// sendWithdrawReq(amount, 1);
 }
 h.biljetKeuze.twoKeyHand = function (){
-	
+	//vooral 20
+	withdraw(amount);
+	// sendWithdrawReq(amount, 2);
 }
 h.biljetKeuze.treeKeyHand = function (){
-	
+	//meeste aantal
+	withdraw(amount);
+	// sendWithdrawReq(amount, 3);
 }
 h.biljetKeuze.fourKeyHand = function (){
 	
@@ -44,5 +52,6 @@ h.biljetKeuze.hashKeyHand = function (){
 	
 }
 h.biljetKeuze.starKeyHand = function (){
-	
+	//terug 
+	loadView("mainMenu");
 }

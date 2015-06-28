@@ -10,6 +10,8 @@ function reload () {
 	resetAll();
 }
 
+h.pincodeFout = {};
+
 h.pincodeFout.zeroKeyHand = function (){
 	
 }

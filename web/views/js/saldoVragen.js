@@ -1,7 +1,5 @@
-var bankrekening = pas2bankrekening(pasNr);
-var saldo = getSaldo(bankrekening);
-
-$("#saldo").text("Uw saldo bedraagt €"+saldo+",-.");
+var saldo = balance();
+$("#saldo").text("Uw saldo bedraagt € "+saldo+",-");
 
 h.saldoVragen = {};
 

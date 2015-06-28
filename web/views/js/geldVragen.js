@@ -1,7 +1,6 @@
 var amount;
 
-var bankrekening = pas2bankrekening(pasNr);
-var saldo = getSaldo(bankrekening);
+var saldo = balance();
 style();
 
 function allHand (numer) {
@@ -16,7 +15,6 @@ function allHand (numer) {
 
 function getPaid(){
 	console.log("get paid")
-	transactie(bankrekening, amount)
 	loadView("biljetKeuze");
 }
 
@@ -32,9 +30,10 @@ function style () {
 	}
 }
 
-  //-----------------------------------------\\
- //-after tis line you only find key handlers-\\
-//---------------------------------------------\\
+  //------------------------------------------\\
+ //-after this line you only find key handlers-\\
+//----------------------------------------------\\
+
 h.geldVragen = {};
 h.geldVragen.zeroKeyHand = function () {
 	console.log("no zero function")
@@ -57,19 +56,22 @@ h.geldVragen.fourKeyHand = function () {
 }
 
 h.geldVragen.fiveKeyHand = function () {
+	console.log("no five function")
 		
 }
 
 h.geldVragen.sixKeyHand = function () {
+	console.log("no six function")
 		
 }
 
 h.geldVragen.sevenKeyHand = function () {
+	console.log("no seven function")
 		
 }
 
 h.geldVragen.eightKeyHand = function () {
-	
+	console.log("no eight function")
 }
 
 h.geldVragen.nineKeyHand = function () {
@@ -81,6 +83,7 @@ h.geldVragen.hashKeyHand = function (){
 }
 
 h.geldVragen.starKeyHand = function (){
+	//terug
 	loadView("mainMenu");
 }
 
