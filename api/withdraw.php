@@ -65,7 +65,7 @@
          $responce = array(
             "success" => array(),
             "error" => array(
-                "code" => 34,
+                "code" => 32,
                 "message" => "niet genoeg saldo",
             )
         );

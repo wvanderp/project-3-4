@@ -23,7 +23,7 @@
 		if (isset($_POST["cardId"])) {
 			$cardId = $_POST["cardId"];
 			$cardId = substr($cardId, 4);
-			echo $cardId;
+			//echo $cardId;
 		}else{
 			$responce = array(
 				"success"=> array(),
