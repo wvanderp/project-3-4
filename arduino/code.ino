@@ -31,15 +31,14 @@ void setup() {
  
         for (byte i = 0; i < 6; i++) {
                 key.keyByte[i] = 0xFF;//keyByte is defined in the "MIFARE_Key" 'struct' definition in the .h file of the library
-        }
+        byte readbackblock[18];
+      }
 
 }
 
 int block=2;//this is the block number we will write into and then read. Do not write into 'sector trailer' block, since this can make the block unusable.
 
-//an array with 16 bytes to be written into one of the 64 card blocks is defined
-//byte blockcontent[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//all zeros. This can be used to delete a block.
-byte readbackblock[18];//This array is used for reading out a block. The MIFARE_Read method requires a buffer that is at least 18 bytes to hold the 16 bytes of a block.
+byte readbackblock[16];//This array is used for reading out a block. The MIFARE_Read method requires a buffer that is at least 18 bytes to hold the 16 bytes of a block.
 
 void loop()
 {
@@ -74,12 +73,12 @@ void loop()
    
          readBlock(block, readbackblock);//read the block back
          Serial.print("Card:");
-         for (int j=0 ; j<16 ; j++)//print the block contents
+         for (int j=0 ; j<14 ; j++)//print the block contents
          {
            Serial.write (readbackblock[j]);//Serial.write() transmits the ASCII numbers as human readable characters to serial monitor
          }
          Serial.println("");
-         
+         delay(2000);
  
 }
 
