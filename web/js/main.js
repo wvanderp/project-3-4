@@ -1,6 +1,7 @@
 //static vars
 //var for load pass
 var pasNr;
+var monneyMethode;
 
 
 var state = "startMenu";

@@ -14,3 +14,15 @@ function loadPinVragenMsg () {
 	loadView("pinInVullen");
 	$("#errorbox").html("U heeft uw pincode verkeerd ingevuld.<br> Herpoging "+atempts);
 }
+
+function loadWitdrawError () {
+	if (monneyMethode == "vragen") {
+		loadView("geldVragen");
+		$("#geldMsg").text("U beschikt niet over genoeg saldo.");
+	};
+
+	if (monneyMethode == "custom") {
+		loadView("geldVragen");
+		$("#geldMsg").text("U beschikt niet over genoeg saldo.");
+	};
+}

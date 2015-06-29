@@ -6,6 +6,7 @@ function resetAll () {
 
 	//main.js
 	pasNr = 0;
+	monneyMethode = "";
 
 	//socket.js
 	last = null;
@@ -28,6 +29,6 @@ function resetAll () {
 	//foutMelding.js
 	//afInterfal.js
 	afInterval = null;
-
+	
 	loadView("startMenu");
 }

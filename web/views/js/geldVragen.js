@@ -1,20 +1,14 @@
 var amount;
 
-var saldo = balance();
-style();
-
-function allHand (numer) {
-	if (numer < saldo) {	
-		$("#geldMsg").empty();
-		amount = numer;
-		$(".moneybox").html("&euro;"+numer+",-");
-	}else{
-		$("#geldMsg").text("U beschikt niet over genoeg saldo. Kies een ander bedrag.");
-	}
+function allHand (numer) {	
+	$("#geldMsg").empty();
+	amount = numer;
+	$(".moneybox").html("&euro;"+numer+",-");
 }
 
 function getPaid(){
 	console.log("get paid")
+	monneyMethode = "vragen";
 	loadView("biljetKeuze");
 }
 

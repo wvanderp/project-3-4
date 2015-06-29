@@ -79,7 +79,7 @@ window.onkeydown = function (e) {
 		case 76: // key: L (for loading card) 
 				console.log("key: load");
 				// loadCard("sker1"); //1234
-				loadCard("sker9713717899"); //1234
+				loadCard("SKER9217541779"); //1234
 				// loadCard("MLBI0200000002"); //5678
 			break;
 	    default:

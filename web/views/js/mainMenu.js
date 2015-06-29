@@ -1,3 +1,7 @@
+if (bank !== "sker") {
+	$(".saldoRow").hide();
+};
+
 h.mainMenu = {};
 
 h.mainMenu.zeroKeyHand = function (){

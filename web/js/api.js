@@ -1,6 +1,8 @@
 var token = null;
 var bank = null;
 
+var atempts = 0;
+
 var ips = {
 	"proh":{
 		"name": "ProjectHeist",
@@ -48,12 +50,15 @@ function login (pasNr, pin) {
 		method: "POST",
 		async: false,
 		dataType: "json"
+		// dataType: "text"
+
 	});
 }
 
 function loginHand(data){
 	if($.isEmptyObject(data.error)){
 		console.log("success")
+		// console.log(data);
 		window.token = data.success.token;
 		loadView("mainMenu");
 	}else{
@@ -62,6 +67,7 @@ function loginHand(data){
 		//als de pincode gewoon fout is
 		if (data.error.code == 15) {
 			console.log("pincode fout");
+			atempts = data.error.failedAttempts;
 			loadPinVragenMsg("pinInVullen");
 			return
 		};
@@ -103,6 +109,7 @@ function balance () {
 function balanceHand(data){
 	if($.isEmptyObject(data.error)){
 		console.log("success");
+		console.log("data");
 		return data.success.balance;
 	}else{
 		console.log("error");
@@ -141,8 +148,12 @@ function withdrawHand(data){
 		loadView("bonVragen");
 	}else{
 		console.log("error");
-		console.log(data.error);
-		loadView("foutMelding");
+		if(data.error.code == 32){	
+
+		}else{
+			console.log(data.error);
+			loadView("foutMelding");
+		}
 	}
 }
 
@@ -173,7 +184,7 @@ function logouteHand(data){
 	if($.isEmptyObject(data.error)){
 		console.log("success");
 	}else{
-		console.log("error");
+		console.log("error");	
 		console.log(data.error);
 		loadView("foutMelding");
 	}
