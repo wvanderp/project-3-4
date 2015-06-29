@@ -61,8 +61,21 @@
 	$saldoArray = mysqli_fetch_assoc($saldo);
 
 	$saldo = $saldoArray['saldo'];
-	$saldo = $saldo - $amount;
+	if ($saldo - $amount < 0) {
+         $responce = array(
+            "success" => array(),
+            "error" => array(
+                "code" => 34,
+                "message" => "niet genoeg saldo",
+            )
+        );
 
+        echo json_encode($responce, JSON_FORCE_OBJECT);
+        die();
+    }
+
+    $saldo = $saldo - $amount;
+    
 	$query = "UPDATE `rekening` SET `saldo` = '".$saldo."' WHERE `rekening_nr` = '".$cardIdArray['pas']."'";
     mysqli_query($link, $query) or die(mysqli_error($link));
 
