@@ -1,11 +1,11 @@
-var io = require("socket.io-client")('http://localhost:1234');
+var io = require("socket.io")(1234);
 
 var last = null;
 var intervalId = null;
 
 io.on("connect", function (socket) {
 	console.log("Socket connected");
-	io.on("keystroke", function (stroke){
+	socket.on("keystroke", function (stroke){
 		if (stroke !== last) {
 			last = stroke;
 			intervalId = setInterval(resetLast, 300);
@@ -13,7 +13,7 @@ io.on("connect", function (socket) {
 			keypad(stroke);
 		};
 	})
-	io.on("card", function (card) {
+	socket.on("card", function (card) {
 		if (card !== last) {
 			last = card;
 			intervalId = setInterval(resetLast, 300);
@@ -27,11 +27,4 @@ io.on("connect", function (socket) {
 function resetLast () {
 	last = null;
 	clearInterval(intervalId);	
-}
-
-function sendWithdrawReq(ammount, methode){
-	io.on("connect", function (socket) {
-		console.log("soccet connect inside sendWithdrawReq");
-		io.emit("WithdrawReq", {"ammount": ammount, "methode": methode});
-	});
 }

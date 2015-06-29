@@ -31,6 +31,7 @@ var ips = {
 function login (pasNr, pin) {
 	console.log("new login api");
 	bank = pasNr.substring(0,4).toLowerCase();
+	
 	console.log(bank+" selected");
 	console.log("pas: '"+pasNr+"' pin: '"+pin+"'");
 

@@ -8,7 +8,8 @@
 	},
 
 	"dependencies": {
-		"socket.io-client": "*"
+		// "node-printer": "*",
+		"socket.io": "*"
 	},
 
 	"webkit": {

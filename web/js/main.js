@@ -12,5 +12,5 @@ $(document).ready(function () {
 	// loadView("mainMenu");
 	loadView("startMenu");
 	// loadCard(1);
-	sendWithdrawReq(2, 1)
+	// sendWithdrawReq(2, 1)
 });
