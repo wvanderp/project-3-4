@@ -22,7 +22,7 @@ function loadWitdrawError () {
 	};
 
 	if (monneyMethode == "custom") {
-		loadView("geldVragen");
-		$("#geldMsg").text("U beschikt niet over genoeg saldo.");
+		loadView("customBedrag");
+		$("#wrongCustomBox").text("U beschikt niet over genoeg saldo.");
 	};
 }

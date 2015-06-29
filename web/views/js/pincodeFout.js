@@ -1,7 +1,7 @@
 var interval = null;
 
 $(document).ready(function () {
-	interval = setInterval(reload, 10000);
+	interval = setInterval(reload, 5000);
 	console.log("brouser will reload in 10 sec");
 });
 

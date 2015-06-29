@@ -1,6 +1,6 @@
 var afInterval = null;
 $(document).ready(function () {
-	afInterval = setInterval(reload, 10000);
+	afInterval = setInterval(reload, 5000);
 	console.log("brouser will reload in 10 sec");
 });
 

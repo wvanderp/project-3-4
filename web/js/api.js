@@ -149,7 +149,7 @@ function withdrawHand(data){
 	}else{
 		console.log("error");
 		if(data.error.code == 32){	
-
+			loadWitdrawError();
 		}else{
 			console.log(data.error);
 			loadView("foutMelding");
