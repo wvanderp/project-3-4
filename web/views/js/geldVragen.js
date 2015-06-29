@@ -18,17 +18,6 @@ function getPaid(){
 	loadView("biljetKeuze");
 }
 
-function style () {
-	if(saldo < 10){
-		$(".moneyImg:eq(0)").attr("src", "images/10EuroGray.png");
-	}
-	if(saldo < 20){
-		$(".moneyImg:eq(1)").attr("src", "images/20EuroGray.png");
-	}
-	if(saldo < 50){
-		$(".moneyImg:eq(2)").attr("src", "images/50EuroGray.png");
-	}
-}
 
   //------------------------------------------\\
  //-after this line you only find key handlers-\\
