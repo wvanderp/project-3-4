@@ -9,17 +9,22 @@ import java.util.ArrayList;
 
 public class Money{
 	public static void main(String[] args) {
+    System.out.println("dit is java");
+    //bedrag
 	int ma= Integer.parseInt(args[0]);
-	int mb= Integer.parseInt(args[1]);
-	int mc= Integer.parseInt(args[2]);
-	int md= Integer.parseInt(args[3]);
+	//groot
+    int mb= Integer.parseInt(args[1]);
+	//middel
+    int mc= Integer.parseInt(args[2]);
+	//klein
+    int md= Integer.parseInt(args[3]);
 		
 		
 		//Setting java files process:
 		ArrayList<String> lines = new ArrayList<String>();
 		String line = null;
 		try {
-            File f1 = new File("./Lego.java");
+            File f1 = new File("../lego/Lego.java");
             FileReader fr = new FileReader(f1);
             BufferedReader br = new BufferedReader(fr);
             while ((line = br.readLine()) != null) {

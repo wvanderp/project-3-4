@@ -3,12 +3,11 @@
 var exec = require('child_process').exec;
 
 
-function printBon() {
+function printBon(amount) {
 	console.log("bon word geprint server")
-	// var newsaldo = saldo - amount;
-	var amount, pasNr, newsaldo = 1;
+	// var amount, pasNr, newsaldo = 1;
 	// var text = "De Skere Bank\n Transactiebon\n\n Opgenomen:"+amount+"\n van rekening "+pasNr+"\n Huidig saldo:"+newsaldo+"\n\n Dank voor uw bezoek\n en tot ziens!";
-	var text = "De Skere Bank Transactiebon Opgenomen:"+amount+" van rekening "+pasNr+" Huidig saldo:"+newsaldo+" Dank voor uw bezoek en tot ziens!";
+	var text = "De Skere Bank Transactiebon Opgenomen:"+amount+" van rekening "+pasNr+" Dank voor uw bezoek en tot ziens!";
 		
 
 	// var cmd = 'java Main'+ text;

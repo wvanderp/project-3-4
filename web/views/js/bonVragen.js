@@ -1,7 +1,7 @@
 h.bonVragen = {}
 h.bonVragen.hashKeyHand = function (){
 	//ja
-	printBon();
+	printBon(amount);
 	loadView("afsluiting");
 }
 

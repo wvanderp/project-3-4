@@ -6,14 +6,17 @@ h.biljetKeuze.zeroKeyHand = function (){
 h.biljetKeuze.oneKeyHand = function (){
 	//minste biljetten
 	withdraw(amount);
+	dispence (amount, 0, 0, 1);
 }
 h.biljetKeuze.twoKeyHand = function (){
 	//vooral 20
 	withdraw(amount);
+	dispence (amount, 0, 1, 0);
 }
 h.biljetKeuze.treeKeyHand = function (){
 	//meeste aantal
 	withdraw(amount);
+	dispence (amount, 1, 0, 0);
 }
 h.biljetKeuze.fourKeyHand = function (){
 	
