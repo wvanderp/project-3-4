@@ -6,7 +6,7 @@ var atempts = 0;
 var ips = {
 	"proh":{
 		"name": "ProjectHeist",
-		"ip": "http://145.24.222.156/",
+		"ip": "http://145.24.222.156:8000/",
 		"ext": ""
 	},
 	"ilmg":{
@@ -21,7 +21,7 @@ var ips = {
 	},
 	"sker":{
 		"name": "Skerebank",
-		"ip": "http://hro.cwms.cc/api/",,
+		"ip": "http://hro.cwms.cc/api/",
 		"ext": ""
 	},
 	"mlbi":{
@@ -62,7 +62,7 @@ function login (pasNr, pin) {
 }
 
 function loginHand(data){
-	if($.isEmptyObject(data.error)){
+	if($.isEmptyObject(data.error) || data.error.code == 0){
 		console.log("success");
 		// console.log(data);
 		window.token = data.success.token;
@@ -114,7 +114,7 @@ function balance () {
 }
 
 function balanceHand(data){
-	if($.isEmptyObject(data.error)){
+	if($.isEmptyObject(data.error) || data.error.code == 0){
 		console.log("success");
 		console.log("data");
 		return data.success.balance;
@@ -132,7 +132,7 @@ function withdraw (amount, klein, middel, groot) {
 	var resp = null
 
 	$.ajax({
-		url: ips[bank].ip+"withdraw",
+		url: ips[bank].ip+"withdraw"+ips[bank].ext,
 		data: {"amount": amount},
 		beforeSend: function(xhr){xhr.setRequestHeader('token', token);},
 		success: function (data){resp = withdrawHand(data, amount, klein, middel, groot);},
@@ -150,7 +150,7 @@ function withdraw (amount, klein, middel, groot) {
 }
 
 function withdrawHand(data, amount, klein, middel, groot){
-	if($.isEmptyObject(data.error)){
+	if($.isEmptyObject(data.error) || data.error.code == 0){
 		console.log("success");
 		dispence (amount, klein, middel, groot);
 		loadView("bonVragen");
@@ -172,7 +172,7 @@ function logout () {
 	var resp = null
 
 	$.ajax({
-		url: ips[bank].ip+"logout",
+		url: ips[bank].ip+"logout"+ips[bank].ext,
 		beforeSend: function(xhr){xhr.setRequestHeader('token', token);},
 		success: function (data){resp = logoutHand(data);},
 		error: function( jqXHR, textStatus, errorThrown ){
@@ -189,7 +189,7 @@ function logout () {
 }
 
 function logouteHand(data){
-	if($.isEmptyObject(data.error)){
+	if($.isEmptyObject(data.error) || data.error.code == 0){
 		console.log("success");
 	}else{
 		console.log("error");	
