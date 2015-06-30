@@ -25,12 +25,12 @@ public class Money{
             while ((line = br.readLine()) != null) {
                 if (line.contains("int bedrag"))
                     line = "int bedrag = " + ma + ";";
-                else if(line.contains("boolean groot"))
-                	line = "boolean groot = " + mb + ";";
-                else if(line.contains("boolean normaal"))
-                	line = "boolean klein = " + mc + ";";
-				else if(line.contains("int dispenserC"))
-                	line = "boolean klein = " + md + ";";
+                else if(line.contains("int groot"))
+                	line = "int groot = " + mb + ";";
+                else if(line.contains("int normaal"))
+                	line = "int normaal = " + mc + ";";
+				else if(line.contains("int klein"))
+                	line = "int klein = " + md + ";";
                 line = line + "\r\n";
                 lines.add(line);
             }
