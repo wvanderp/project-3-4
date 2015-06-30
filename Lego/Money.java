@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 public class Money{
 	public static void main(String[] args) {
-	int ma=50;
-	int mb=0;
-	int mc=1;
-	int md=0;
+	int ma= Integer.parseInt(args[0]);
+	int mb= Integer.parseInt(args[1]);
+	int mc= Integer.parseInt(args[2]);
+	int md= Integer.parseInt(args[3]);
 		
 		
 		//Setting java files process:
