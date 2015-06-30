@@ -9,9 +9,9 @@ public class Printer {
     {
         PrinterJob job = PrinterJob.getPrinterJob();
         job.setPrintable(new OutputPrinter(message));
-//        boolean doPrint = job.printDialog();
-//        if (doPrint)
-//        {
+        boolean doPrint = job.printDialog();
+		if (doPrint)
+        {
             try
             {
                 job.print();
@@ -20,6 +20,6 @@ public class Printer {
             {
                 // Print job did not complete.
             }
-//        }
+        }
     }
 }

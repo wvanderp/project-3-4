@@ -63,12 +63,13 @@ function login (pasNr, pin) {
 
 function loginHand(data){
 	if($.isEmptyObject(data.error)){
-		console.log("success")
+		console.log("success");
 		// console.log(data);
 		window.token = data.success.token;
 		loadView("mainMenu");
 	}else{
 		console.log("error");
+		console.log(data.success);
 		console.log(data.error);
 		//als de pincode gewoon fout is
 		if (data.error.code == 15) {

@@ -19,12 +19,14 @@ function backspace () {
 function check(){
 	if ($(".customMoney").val() > 500) {
 		$("#wrongCustomBox").text("Het gekozen bedrag is hoger dan €500,-. Kies een lager bedrag");
+		return;
 	}else{
 		$("#wrongCustomBox").text("");
 	};
 
 	if ($(".customMoney").val()%10 != 0) {
 		$("#wrongCustomBox").text("Het gekozen bedrag is geen veelvoud van 10,-. Kies een ander bedrag");
+		return;
 	}else{
 		$("#wrongCustomBox").text("");
 	};

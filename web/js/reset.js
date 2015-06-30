@@ -7,6 +7,7 @@ function resetAll () {
 	//main.js
 	pasNr = 0;
 	monneyMethode = "";
+	state = "startMenu";
 
 	//socket.js
 	last = null;
