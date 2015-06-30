@@ -9,7 +9,7 @@ var h = {};
 
 
 $(document).ready(function () {
-	// printBon();
+	printBon();
 	// loadView("mainMenu");
 	loadView("startMenu");
 	// loadCard(1);
