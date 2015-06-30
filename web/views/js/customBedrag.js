@@ -1,7 +1,9 @@
+var amount;
+
 function allHandCustom(num){
 	console.log("allHandCustom num: "+num);
 	$(".customMoney").val($(".customMoney").val()+num);
-
+	amount = $(".customMoney").val();
 	check();
 
 }
@@ -9,6 +11,7 @@ function allHandCustom(num){
 function backspace () {
 	var val = $(".customMoney").val();
 	var newVal = val.substring(0, val.length -1 );
+	amount = $(".customMoney").val();
 	$(".customMoney").val(newVal);
 	check();
 }
