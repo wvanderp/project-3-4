@@ -28,7 +28,7 @@ public class Money{
                 else if(line.contains("int groot"))
                 	line = "int groot = " + mb + ";";
                 else if(line.contains("int normaal"))
-                	line = "int klein = " + mc + ";";
+                	line = "int normaal = " + mc + ";";
 				else if(line.contains("int klein"))
                 	line = "int klein = " + md + ";";
                 line = line + "\r\n";
