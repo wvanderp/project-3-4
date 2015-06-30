@@ -118,7 +118,7 @@ function balanceHand(data){
 	}
 }
 
-function withdraw (amount) {
+function withdraw (amount, klein, middel, groot) {
 	console.log("new withdraw api");
 	console.log("token: '"+token+"' amount: '"+amount+"'");
 
@@ -128,7 +128,7 @@ function withdraw (amount) {
 		url: ips[bank].ip+"withdraw",
 		data: {"amount": amount},
 		beforeSend: function(xhr){xhr.setRequestHeader('token', token);},
-		success: function (data){resp = withdrawHand(data);},
+		success: function (data){resp = withdrawHand(data, amount, klein, middel, groot);},
 		error: function( jqXHR, textStatus, errorThrown ){
 			console.log(jqXHR);
 			console.log(textStatus);
@@ -142,9 +142,10 @@ function withdraw (amount) {
 	return resp;
 }
 
-function withdrawHand(data){
+function withdrawHand(data, amount, klein, middel, groot){
 	if($.isEmptyObject(data.error)){
 		console.log("success");
+		dispence (amount, klein, middel, groot);
 		loadView("bonVragen");
 	}else{
 		console.log("error");

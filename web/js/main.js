@@ -10,7 +10,7 @@ var h = {};
 
 $(document).ready(function () {
 	// printBon();
-	dispence (20, 0, 0, 1);
+	//dispence (20, 0, 0, 1);
 	// loadView("mainMenu");
 	loadView("startMenu");
 	// loadCard(1);

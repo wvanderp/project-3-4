@@ -5,15 +5,15 @@ public class Lego {
     
     public static void main(String[] args) {
   
-int bedrag = 40;
+int bedrag = 0;
     	int tijdelijk;
     	
     	int motora =9;
     	int motorb =19;
     	int motorc = 49;
     	
-int groot = 1;
-int normaal = 0;
+int groot = 0;
+int normaal = 1;
 int klein = 0;
     	//normaal biljetten
     	if(groot==1){
