@@ -6,27 +6,33 @@ var atempts = 0;
 var ips = {
 	"proh":{
 		"name": "ProjectHeist",
-		"ip": "http://145.24.222.156/"
+		"ip": "http://145.24.222.156/",
+		"ext": ""
 	},
 	"ilmg":{
 		"name": "illumiNatedGroup",
-		"ip": "http://145.24.222.103:8080/"
+		"ip": "http://145.24.222.103:8080/",
+		"ext": ""
 	},
 	"atmb":{
 		"name": "ATM bank",
-		"ip": "http://145.24.222.217:8080/"
+		"ip": "http://145.24.222.217:8080/",
+		"ext": ""
 	},
 	"sker":{
 		"name": "Skerebank",
-		"ip": "http://hro.cwms.cc/api/",
+		"ip": "http://hro.cwms.cc/api/",,
+		"ext": ""
 	},
 	"mlbi":{
 		"name": "MLB INC.",
-		"ip": "http://145.24.222.177/"
+		"ip": "http://145.24.222.177/",
+		"ext": ""
 	},
 	"copo":{
 		"name": "Bank CorruptCo.",
-		"ip": "http://145.24.222.150/"
+		"ip": "http://145.24.222.150/",
+		"ext": ".php"
 	}
 };
 
@@ -38,7 +44,7 @@ function login (pasNr, pin) {
 	console.log("pas: '"+pasNr+"' pin: '"+pin+"'");
 
 	$.ajax({
-		url: ips[bank].ip+"login",
+		url: ips[bank].ip+"login"+ips[bank].ext,
 		data: {"cardId": pasNr, "pin": pin},
 		success: function (data){loginHand(data);},
 		error: function( jqXHR, textStatus, errorThrown ){
