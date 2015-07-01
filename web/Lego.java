@@ -5,7 +5,7 @@ public class Lego {
     
     public static void main(String[] args) {
   
-int bedrag = 20;
+int bedrag = 10;
     	int tijdelijk;
     	
     	int motora =9;
